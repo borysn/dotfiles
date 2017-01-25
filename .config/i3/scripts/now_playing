@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# show now playing from cmus
+SONG=$(cat $HOME/.tmp/now-playing | sed 's/\Music ://g' | sed 's/\.mp3//g')
+
+cat $HOME/.tmp/now-playing | zscroll -l 20 -b "" 
+

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+CUR_VOL=$(pactl list sinks | grep "Volume: f" | awk {'print $5'} | tr "%" " ")
+VOL_LIMIT="110"
+
+# limit volume to 110% 
+
+if [ "$CUR_VOL" -lt "$VOL_LIMIT" ]
+then
+  # increase volume
+  pactl set-sink-volume 0 +2%
+fi
+

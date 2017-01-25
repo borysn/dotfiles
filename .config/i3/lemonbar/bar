@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/home/p3pt/.config/i3/lemonbar/feeder | lemonbar -p -a 10 -B "#D65A7C" -F "#F3F4F5" -g 1600x25 -f "Noto Sans Mono:size=10" -f "fontawesome:size=10" | sh

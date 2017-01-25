@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# decrease volume
+pactl set-sink-volume 0 -3%

@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# time 
+whattime() {
+  echo  $(date "+%l:%M %p")
+}
+
+# date
+whatdate() {
+  echo  $(date "+%a, %b %d")
+}
+
+whatami() {
+  echo  $HOSTNAME@$USER
+}
+
+volume() {
+  CUR_VOL=$(pactl list sinks | grep "Volume: f" | awk {'print $5'} | sed 's/\%//g')
+
+  if [ "$CUR_VOL" -eq "0" ]; then
+    ICON=
+  elif [ "$CUR_VOL" -le "50" ]; then
+    ICON=
+  else
+    ICON=
+  fi
+
+  echo %{A4:/home/p3pt/.config/i3/scripts/upvol:}%{A5:/home/p3pt/.config/i3/scripts/downvol:} $ICON $CUR_VOL% %{A}%{A}
+}
+
+nowplaying() {
+  /home/p3pt/.config/i3/scripts/now_playing 
+}
+
+wifi() {
+ echo  $(iwgetid -r)
+}
+
+while true; do
+  BAR_LEFT="%{l}%{R} $(whatami)"
+  BAR_CENTER="%{c}%{F#F3F4F5}%{B#D65A7C} $(whattime)"
+  BAR_RIGHT="%{r}%{B#F3F4F5}%{F#D65A7C} $(wifi) | $(volume) | $(whatdate) %{F-}%{B-}"
+  echo $BAR_LEFT $BAR_CENTER $BAR_RIGHT
+  sleep .1
+done
+
