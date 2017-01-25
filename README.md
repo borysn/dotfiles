@@ -14,6 +14,7 @@
 * i3-gaps
 * i3blocks
 * i3lock
+* urxvt
 * feh
 * rofi 
 * polybar 
