@@ -1,6 +1,7 @@
 # dotfiles
 
-![screenshot](http://imgur.com/PpsgzjO)
+![screenshot](http://i.imgur.com/PpsgzjO.png)
+
 [screenshot album](https://imgur.com/a/fGqVk)
 
 ## info
@@ -24,5 +25,5 @@
 * ttf-font-awesome
 * ttf-ionicons
 * noto-fonts
-* siji
+* siji<LeftMouse>
 
