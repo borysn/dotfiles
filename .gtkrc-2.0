@@ -4,7 +4,7 @@
 include "/home/p3pt/.gtkrc-2.0.mine"
 gtk-theme-name="Numix-ArchBlue"
 gtk-icon-theme-name="Vivacious-NonMono-Light-Pink"
-gtk-font-name="Droid Sans 11"
+gtk-font-name="Noto Sans 11"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
