@@ -108,6 +108,9 @@ call plug#begin('~/.config/nvim/plugged')
   " vim-colorschemes
   Plug 'flazz/vim-colorschemes'
 
+  " dracula theme
+  Plug 'dracula/vim'
+
   " vim-airline
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -120,9 +123,11 @@ call plug#end()
 
 " [vim-colorschemes]
  set t_Co=256
- syntax enable
+ syntax on
+ "syntax enable
  set background=dark
- colorscheme mojave
+ "colorscheme mojave
+ color dracula
  "let g:solarized_termcolors=256
  "let g:badwold_darkgutter=1
  highlight Normal ctermbg=None
