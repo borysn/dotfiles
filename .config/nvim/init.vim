@@ -149,4 +149,4 @@ call plug#end()
  nmap <F8> :TagbarToggle<CR>
 
 " [airline]
- let g:airline_theme = 'bubblegum' 
+ let g:airline_theme = 'behelit' 
