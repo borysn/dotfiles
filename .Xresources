@@ -1,4 +1,4 @@
-! URxvt
+e URxvt
 
 ! General settings
 URxvt.saveLines: 100000
@@ -59,7 +59,7 @@ URxvt.color0  : #3d84a6
 URxvt.color8  : #555753
 ! red
 URxvt.color1  : #46299c
-URxvt.color9  : #5433b6
+URxvt.color9  : #33216c
 ! green
 URxvt.color2  : #37227d
 URxvt.color10 : #9ca8b8
