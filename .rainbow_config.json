@@ -1,0 +1,43 @@
+{
+    "HEARTBEAT_TIMEOUT": 120,
+    "IMAGE_ON_TERM": false,
+    "IMAGE_RESIZE_TO_FIT": false,
+    "THEME": "tomorrow_night",
+    "ASCII_ART": true,
+    "HIDE_PROMPT": true,
+    "PREFIX": "#owner#place#me#keyword",
+    "SEARCH_TYPE": "mixed",
+    "SEARCH_MAX_RECORD": 20,
+    "HOME_TWEET_NUM": 20,
+    "RETWEETS_SHOW_NUM": 20,
+    "CONVERSATION_MAX": 30,
+    "QUOTE_FORMAT": "#comment RT #owner: #tweet",
+    "THREAD_META_LEFT": "(#id) #clock",
+    "THREAD_META_RIGHT": "#clock (#id)",
+    "THREAD_MIN_WIDTH": 20,
+    "NOTIFY_FORMAT": "  #source_user #notify #clock",
+    "MESSAGES_DISPLAY": 20,
+    "TREND_MAX": 10,
+    "LIST_MAX": 20,
+    "ONLY_LIST": [],
+    "IGNORE_LIST": [],
+    "HISTORY_FILENAME": "completer.hist",
+    "IMAGE_SHIFT": 2,
+    "IMAGE_MAX_HEIGHT": 20,
+    "STREAM_DELAY": 0,
+    "USER_DOMAIN": "userstream.twitter.com",
+    "PUBLIC_DOMAIN": "stream.twitter.com",
+    "SITE_DOMAIN": "sitestream.twitter.com",
+    "FORMAT": {
+        "TWEET": {
+            "CLOCK_FORMAT": "%Y/%m/%d %H:%M:%S",
+            "DISPLAY": "\n  #name #nick #clock \n  \u20aa:#rt_count \u2665:#fa_count id:#id via #client #fav\n  #tweet"
+        },
+        "MESSAGE": {
+            "CLOCK_FORMAT": "%Y/%m/%d %H:%M:%S",
+            "DISPLAY": "\n  #sender_name #sender_nick #to #recipient_name #recipient_nick :\n  #clock message_id:#id\n  #message"
+        }
+    },
+    "IMAGE_IN_TERM": false,
+    "HOME_TWEET_HOME": 20
+}
