@@ -1,4 +1,4 @@
-e URxvt
+! Unicode URxvt
 
 ! General settings
 URxvt.saveLines: 100000
@@ -40,10 +40,8 @@ URxvt.keysym.M-u: perl:url-select:select_next
 
 ! Liberation Mono
 
-URxvt.font: xft: Liberation Mono-10, xft: fontawesome-10
-!xft:Dejavu Sans Mono for Powerline-10
-URxvt.boldFont: xft: Liberation Mono Bold-10 
-!xft:Dejavu Sans Mono for Powerline Bold-10
+URxvt.font: xft: Hack-10:style=regular, xft: fontawesome-10
+URxvt.boldFont: xft: Hack-10:style=bold 
 URxvt.letterSpace: -1
 Xft*dpi: 96
 Xft*antialias: true
