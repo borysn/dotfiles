@@ -7,8 +7,8 @@
 ## info
 * theme: Numix-ArchBlue
 * icon theme: Vivacious-NonMono-Light-Pink
-* vim colorscheme: mojave
-* vim-airline theme: bubblegum
+* vim colorscheme: dracula
+* vim-airline theme: behelit
 
 ## applications
 * i3-gaps
@@ -20,12 +20,11 @@
 * compton
 
 ## fonts
-* ttf-liberation
-* ttf-droid
+* ttf-hack
 * ttf-font-awesome
-* ttf-ionicons
 * noto-fonts
-* siji<LeftMouse>
+* siji
+* unifont
 
 ## future improvements
 * compton fu
