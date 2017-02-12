@@ -1,0 +1,11 @@
+[Unit]
+Description=Pacman mirrorlist update
+Documentation=https://wiki.archlinux.org/index.php/Reflector
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/usr/share/reflector-timer/reflector.conf
+EnvironmentFile=-/etc/conf.d/reflector.conf
+ExecStart=/usr/bin/reflector -a "$AGE" -c "$COUNTRY" -n "$NUMBER" -l "$LATEST" -f "$FASTEST" --sort "$SORT" --save /etc/pacman.d/mirrorlist --protocol "$PROTOCOL1" --protocol "$PROTOCOL2" --protocol "$PROTOCOL3" --protocol "$PROTOCOL4"

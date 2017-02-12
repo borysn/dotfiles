@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily pacman mirrorlist refresh
+
+[Timer]
+OnCalendar=Daily
+Persistent=true
+AccuracySec=5m
+
+[Install]
+WantedBy=timers.target
