@@ -21,7 +21,7 @@
     "LIST_MAX": 20,
     "ONLY_LIST": [],
     "IGNORE_LIST": [],
-    "HISTORY_FILENAME": "completer.hist",
+    "HISTORY_FILENAME": ".rainbowstream.hist",
     "IMAGE_SHIFT": 2,
     "IMAGE_MAX_HEIGHT": 20,
     "STREAM_DELAY": 0,
