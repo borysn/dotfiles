@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# screencast file
+#
+
+ffmpeg -f video4linux2 -s 640x480 -r 25 -i /dev/nvidia0 -c:v libvpx -s 720x576 -r 25 -cpu-used 0 -qmin 10 -qmax 42 -quality good -flags +global_header -b:v 400k -f null
+
