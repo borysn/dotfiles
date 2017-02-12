@@ -21,10 +21,8 @@
 
 ## fonts
 * ttf-hack
-* ttf-font-awesome
 * noto-fonts
-* siji
-* unifont
+* ionicons
 
 ## future improvements
 * compton fu
