@@ -53,14 +53,14 @@ URxvt.foreground: #f3f4f5
 URxvt.color0  : #3d84a6
 URxvt.color8  : #322d51 
 
-URxvt.color1  : #46299c
-URxvt.color9  : #376490
+URxvt.color1  : #d35a7c
+URxvt.color9  : #9ca8b8
 
 URxvt.color2  : #37227d
-URxvt.color10 : #9ca8b8
+URxvt.color10 : #376490 
 
 URxvt.color3  : #9f436c
-URxvt.color11 : #5d2a5a 
+URxvt.color11 : #211a47 
 
 URxvt.color4  : #9b66f6
 URxvt.color12 : #be95ab 
@@ -72,5 +72,5 @@ URxvt.color6  : #d66c94
 URxvt.color14 : #acc1c9
 
 URxvt.color7  : #45afc1
-URxvt.color15 : #531f4a 
+URxvt.color15 : #423e68
 
