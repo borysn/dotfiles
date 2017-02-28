@@ -1,12 +1,12 @@
-! Unicode URxvt
+! URxvt
 
 ! General settings
 URxvt.saveLines: 100000
 URxvt.scrollBar: False
 URxvt.scrollstyle: rxvt
-URxvt.termName: xterm-256color
+URxvt.termName: rxvt-256color
 URxvt.urgentOnBell: True
-URxvt.cursorBlink: true
+URxvt.cursorBlink: True
 URxvt.iso14755: False
 URxvt.internalBorder: 30
 ! urls
@@ -38,105 +38,39 @@ URxvt.keysym.M-u: perl:url-select:select_next
 
 ! Font
 
-! Liberation Mono
-
-URxvt.font: xft: Hack-10:style=regular, xft: fontawesome-10
-URxvt.boldFont: xft: Hack-10:style=bold 
+URxvt.font: xft:Hack:pixelsize=14,style=regular xft:Ionicons:pixelsize=14 xft:FontAwesome:pixelsize=14 xft:Siji:pixelsize=14 xft:unicode:pixelsize=14
+URxvt.boldFont: xft:Hack:pixelsize=14,style=bold  
 URxvt.letterSpace: -1
 Xft*dpi: 96
-Xft*antialias: true
-Xft*hinting: full
+Xft*antialias: True
+Xft*hinting: Full
 
 ! colors
 
 URxvt*background: [85]#434871
 URxvt.foreground: #f3f4f5
 
-! black
 URxvt.color0  : #3d84a6
-URxvt.color8  : #555753
-! red
+URxvt.color8  : #322d51 
+
 URxvt.color1  : #46299c
-URxvt.color9  : #33216c
-! green
+URxvt.color9  : #376490
+
 URxvt.color2  : #37227d
 URxvt.color10 : #9ca8b8
-! yellow
+
 URxvt.color3  : #9f436c
-URxvt.color11 : #d3f583
-! blue
+URxvt.color11 : #5d2a5a 
+
 URxvt.color4  : #9b66f6
-URxvt.color12 : #9b66f6
-! magenta
-URxvt.color5  : #9f436c
-URxvt.color13 : #322d51
-! cyan
+URxvt.color12 : #be95ab 
+
+URxvt.color5  : #d1a2fd
+URxvt.color13 : #7b51dd
+
 URxvt.color6  : #d66c94
-URxvt.color14 : #d66c94
-! white
+URxvt.color14 : #acc1c9
+
 URxvt.color7  : #45afc1
-URxvt.color15 : #EEEEEC
+URxvt.color15 : #531f4a 
 
-! XTerm
-
-! General settings
-XTerm*termName: xterm-256color
-XTerm*geometry: 80x24
-XTerm*saveLines: 1024
-XTerm*scrollBar: False
-XTerm*loginshell: False
-XTerm*cursorBlink: False
-
-! Fonts and Encoding
-XTerm*utf8: True
-XTerm*locale: True
-XTerm*utf8Title: True
-XTerm*renderFont: True
-XTerm*preeditType: Root
-XTerm*xftAntialias: true
-XTerm*faceName: xft:Inconsolata-12
-
-! Trim trailing spaces
-XTerm*trimSelection: true
-
-! Fix alt-key inputting
-XTerm*eightBitInput: false
-XTerm*metaSendsEscape: true
-
-! Copy and paste with clipboard
-XTerm*translations: #override \
-	Ctrl Shift <KeyPress> C: copy-selection(CLIPBOARD) \n\
-	Ctrl Shift <KeyPress> V: insert-selection(CLIPBOARD)
-
-! Allow selecting email/url by double-click
-XTerm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
-
-! colors xterm
-
-XTerm*background: #101010
-XTerm*foreground: #d1a2fd
-
-! black
-XTerm*color0  : #5f3cc4
-XTerm*color8  : #3b1537
-! red
-XTerm*color1  : #3c3760
-XTerm*color9  : #334c78
-! green
-XTerm*color2  : #5333b4
-XTerm*color10 : #3c7ea2
-! yellow
-XTerm*color3  : #315a88
-XTerm*color11 : #291c64
-! blue
-XTerm*color4  : #44aec0
-XTerm*color12 : #c28afd
-! magenta
-XTerm*color5  : #582452
-XTerm*color13 : #7b284e
-! cyan
-XTerm*color6  : #69fefd
-XTerm*color14 : #9f436c
-! white
-XTerm*color7  : #ffffff
-XTerm*color15 : #44cf69
