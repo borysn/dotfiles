@@ -1,0 +1,42 @@
+# mandatory!
+# add this file to /etc/portage/sets/
+dev-libs/glib:2
+dev-libs/libgcrypt
+dev-libs/nspr
+dev-libs/nss
+gnome-base/gconf
+media-libs/alsa-lib
+media-libs/fontconfig
+media-libs/freetype:2
+media-libs/libjpeg-turbo
+media-libs/libogg
+media-libs/libpng:1.2
+media-libs/libsdl
+media-libs/libtheora
+media-libs/libvorbis
+media-libs/libtxc_dxtn
+media-libs/openal
+net-misc/curl
+net-print/cups
+sys-apps/dbus
+>=sys-devel/gcc-4.6.0
+>=sys-libs/glibc-2.15
+>=sys-libs/zlib-1.2.4
+virtual/libusb:1
+virtual/opengl
+x11-libs/cairo
+x11-libs/gdk-pixbuf
+x11-libs/gtk+:2
+x11-libs/libX11
+x11-libs/libXext
+x11-libs/libXfixes
+x11-libs/libXi
+x11-libs/libXrandr
+x11-libs/libXrender
+x11-libs/pango
+x11-libs/pixman
+
+# optional
+media-sound/pulseaudio
+net-misc/networkmanager
+x11-misc/xdg-user-dirs

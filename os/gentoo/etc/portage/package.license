@@ -1,0 +1,2 @@
+# required by nvidia-cuda-toolkit (argument)
+=dev-util/nvidia-cuda-toolkit-6.5.19-r1 NVIDIA-CUDA
