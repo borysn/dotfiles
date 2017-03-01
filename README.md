@@ -5,7 +5,7 @@
 [screenshot album](https://imgur.com/a/fGqVk)
 
 ## info
-* theme: Numix-ArchBlue
+* theme: Flatabulous-blue-dark-new
 * icon theme: Vivacious-NonMono-Light-Pink
 * vim colorscheme: dracula
 * vim-airline theme: behelit
@@ -19,10 +19,12 @@
 * polybar 
 * compton
 
-## fonts
-* ttf-hack
-* noto-fonts
+## required fonts
+* hack
+* noto
 * ionicons
+* fontawesome
+* siji
 
 ## future improvements
 * compton fu
