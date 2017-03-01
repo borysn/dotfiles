@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#
+# enable power options for all users
+#
+
+# array of commands
+CMDS=(shutdown reboot poweroff)
+
+# create shutdown group
+sudo groupadd shutdown
+
+# process commands
+for c in ${CMDS[@]}; do
+ sudo chmod +s /sbin/$c
+ sudo chown root:shutdown /sbin/$c
+ sudo ln -s /sbin/$c /bin/$c
+done
+
+exit 0
