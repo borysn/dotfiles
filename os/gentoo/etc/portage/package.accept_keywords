@@ -51,4 +51,4 @@
 # required by steam-meta (argument)
 =games-util/steam-games-meta-0-r20160812 ~amd64
 # required for gcc-5.1.0
-=sys-devel/gcc-5.1.0 **
+=sys-devel/gcc-5.2.0 **
