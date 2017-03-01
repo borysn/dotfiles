@@ -37,3 +37,6 @@
 
 # cdrom
 /dev/cdrom   /mnt/cdrom   auto   noauto,ro   0 0
+
+# restrict access to pid dirs
+proc   /proc   proc   nosuid,nodev,noexec,hidepid=2,gid=wheel   0 0
