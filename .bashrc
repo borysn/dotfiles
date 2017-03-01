@@ -7,6 +7,8 @@
 ########
 
 export PATH=$PATH:~/.local/scripts
+export PATH=$PATH:~/.npm/bin
+export PATH=$PATH:~/.gem/ruby/2.4.0/bin
 
 
 ###########
@@ -16,7 +18,7 @@ export PATH=$PATH:~/.local/scripts
 # editor
 export EDITOR=nvim
 # tmux
-export TERM=xterm-256color
+export TERM=rxvt-256color
 # prompt dir trim
 export PROMPT_DIRTRIM=1
 

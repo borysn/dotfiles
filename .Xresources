@@ -4,7 +4,7 @@
 URxvt.saveLines: 100000
 URxvt.scrollBar: False
 URxvt.scrollstyle: rxvt
-URxvt.termName: rxvt-256color
+URxvt*termName: rxvt-256color
 URxvt.urgentOnBell: True
 URxvt.cursorBlink: True
 URxvt.iso14755: False
