@@ -59,8 +59,8 @@ URxvt.color9  : #211a47
 URxvt.color2  : #9b66f6
 URxvt.color10 : #45afc1 
 
-URxvt.color3  : #9f436c
-URxvt.color11 : #9ca8b8 
+URxvt.color3  : #9ca8b8 
+URxvt.color11 : #9f436c 
 
 URxvt.color4  : #d1a2fd
 URxvt.color12 : #be95ab 
