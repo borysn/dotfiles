@@ -62,6 +62,7 @@ new_window 1pixel
 # startup #
 ###########
 exec --no-startup-id polybar -c /home/p3pt/.config/i3/polybar/topbar.ini topbar 
+exec --no-startup-id i3-lm l 1 /home/p3pt/.config/i3/layouts/busy.json 
 exec_always --no-startup-id feh --bg-center /home/p3pt/.config/i3/wallpapers/bg.png
 
 ###########
@@ -72,8 +73,11 @@ exec_always --no-startup-id feh --bg-center /home/p3pt/.config/i3/wallpapers/bg.
 # key bindings #
 ################
 
+# screen shot
+bindsym --release $mod+Print exec scrot -q 100 '%Y-%m-%d_%H%M%S_$wx$h.png' -e 'mv $f ~/Pictures/screenshots/'
+
 # start rofi (a program launcher)
-bindsym $mod+d exec "rofi -combi-modi window,drun,run -show combi -modi combi -lines 10 -width 50 -padding 100"
+bindsym $mod+d exec "rofi -combi-modi window,drun,run -show combi -modi combi -lines 10 -width 50 -padding 100 -font 'Noto Sans 12'"
 
 # start a terminal
 bindsym $mod+Return exec rofi-sensible-terminal
