@@ -56,16 +56,16 @@ URxvt.color8  : #322d51
 URxvt.color1  : #d35a7c
 URxvt.color9  : #211a47 
 
-URxvt.color2  : #37227d
+URxvt.color2  : #9b66f6
 URxvt.color10 : #45afc1 
 
 URxvt.color3  : #9f436c
 URxvt.color11 : #9ca8b8 
 
-URxvt.color4  : #9b66f6
+URxvt.color4  : #d1a2fd
 URxvt.color12 : #be95ab 
 
-URxvt.color5  : #d1a2fd
+URxvt.color5  : #37227d 
 URxvt.color13 : #7b51dd 
 
 URxvt.color6  : #d66c94
