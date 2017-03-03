@@ -10,14 +10,16 @@
 * vim colorscheme: dracula
 * vim-airline theme: behelit
 
-## applications
+## required applications
 * i3-gaps
-* i3lock
+* i3lock-fancy
+* i3lock-colors
 * urxvt
 * feh
 * rofi 
 * polybar 
 * compton
+* scrot
 
 ## required fonts
 * hack
