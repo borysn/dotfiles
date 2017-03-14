@@ -12,6 +12,7 @@ sudo groupadd shutdown
 
 # process commands
 for c in ${CMDS[@]}; do
+ sudo chmod 4754 /sbin/$c 
  sudo chmod +s /sbin/$c
  sudo chown root:shutdown /sbin/$c
  sudo ln -s /sbin/$c /bin/$c
