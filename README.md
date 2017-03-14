@@ -20,6 +20,7 @@
 * polybar 
 * compton
 * scrot
+* numlockx
 
 ## required fonts
 * hack

@@ -61,6 +61,7 @@ new_window 1pixel
 ###########
 # startup #
 ###########
+exec --no-startup-id numlockx on
 exec --no-startup-id polybar -c /home/p3pt/.config/i3/polybar/topbar.ini topbar 
 exec --no-startup-id i3-lm l 1 /home/p3pt/.config/i3/layouts/busy.json 
 exec_always --no-startup-id feh --bg-center /home/p3pt/.config/i3/wallpapers/bg.png
@@ -230,7 +231,7 @@ mode "$mode_gaps_outer" {
 }
 
 # shutdown
-set $Locker i3lock -i /home/p3pt/.config/i3/wallpapers/lock.png && sleep 1
+set $Locker i3lock-fancy -p -t $USER@$HOSTNAME && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -238,8 +239,8 @@ mode "$mode_system" {
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+    bindsym r exec --no-startup-id shutdown -r now, mode "default"
+    bindsym Shift+s exec --no-startup-id shutdown -h now, mode "default"  
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
