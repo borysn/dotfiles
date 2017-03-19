@@ -28,7 +28,9 @@ export PROMPT_DIRTRIM=1
 #########
 
 alias clock="tty-clock -c -C 6 -t"
-
+alias reboot="sudo systemctl reboot"
+alias poweroff="sudo systemctl poweroff"
+alias halt="sudo systemctl halt"
 
 #########
 # other #
