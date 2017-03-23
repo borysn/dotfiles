@@ -64,6 +64,7 @@ new_window 1pixel
 
 for_window [instance="Steam" class="Steam"] floating enable
 for_window [instance="pavucontrol" class="Pavucontrol"] floating enable
+for_window [instance="lxapperance" class="Lxappearance"] floating enable
 
 ###########
 # startup #
