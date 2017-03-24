@@ -25,9 +25,9 @@
 ## required fonts
 * hack
 * noto
-* ionicons
+* [ionicons](/os/gentoo/desktop/usr/share/fonts/ionicons)
 * fontawesome
-* siji
+* [siji](/os/gentoo/desktop/usr/share/fonts/siji)
 
 ## thanks to VansDesign for the wallpaper!
 [wallpaper](https://www.reddit.com/r/wallpapers/comments/5jzzir/low_poly_wall_i_created_inspired_by_a_game_called/)
