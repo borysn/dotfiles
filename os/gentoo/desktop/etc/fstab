@@ -23,20 +23,24 @@
 #       documentation for details on setting a label. To obtain the UUID, use
 #       the blkid(8) command.
 
-# boot
-/dev/sda1   /boot   vfat   defaults   1 2
+# system
+/dev/sda1                     /boot     vfat   defaults                                  0 0
+/dev/sda4                     /var      ext4   defaults                                  0 0
+/dev/sda5                     /tmp      ext4   defaults                                  0 0
+/dev/mapper/gentoovg-rootlv   /         ext4   rw,relatime,noatime,data=ordered          0 0
+/dev/mapper/gentoovg-homelv   /home     ext4   rw,relatime,noatime,data=ordered          0 0
 
-# home & root
-/dev/mapper/gentoovg-rootlv   /       ext4   rw,relatime,noatime,data=ordered   0 1
-/dev/mapper/gentoovg-homelv   /home   ext4   rw,relatime,noatime,data=ordered   0 2
+# swap
+/dev/sda2                     none      swap   sw                                        0 0
 
-# spindles
-/dev/sda2   /media/p3pt/data     ntfs-3g   defaults    0 2
-/dev/sda3   /media/p3pt/backup   ntfs-3g   defaults    0 2
-/dev/sdb7   /media/p3pt/piggy    ntfs-3g   defaults    0 2
+# tmpfs
+shm                        /dev/shm     tmpfs  nodev,nosuid,noexec                       0 0
+
+# linux steam
+/dev/sda6    /media/p3pt/linuxsteam     ext4   defaults                                  0 0
 
 # cdrom
-/dev/cdrom   /mnt/cdrom   auto   noauto,ro   0 0
+/dev/cdrom               /mnt/cdrom     auto   noauto,ro                                 0 0
 
 # restrict access to pid dirs
-proc   /proc   proc   nosuid,nodev,noexec,hidepid=2,gid=wheel   0 0
+proc                          /proc     proc   nosuid,nodev,noexec,hidepid=2,gid=wheel   0 0
