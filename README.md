@@ -26,6 +26,10 @@
     - [vim-plug](https://github.com/junegunn/vim-plug)
 * feh
 * rofi 
+* cmus
+* ranger
+* w3m
+* neofetch
 * polybar
     - module support for
         * i3
