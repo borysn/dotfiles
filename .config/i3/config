@@ -2,6 +2,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# use meta key for mod
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -65,14 +66,26 @@ new_window 1pixel
 for_window [instance="Steam" class="Steam"] floating enable
 for_window [instance="pavucontrol" class="Pavucontrol"] floating enable
 for_window [instance="lxapperance" class="Lxappearance"] floating enable
+for_window [instance="seahorse" class="Seahorse"] floating enable
 
 ###########
 # startup #
 ###########
+set $locker i3lock-fancy -t $USER@$HOSTNAME && sleep 1
+exec xautolock -time .5 -locker $locker
 exec --no-startup-id numlockx on
 exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 exec --no-startup-id polybar -c /home/p3pt/.config/i3/polybar/topbar.ini topbar 
 exec_always --no-startup-id feh --bg-center /home/p3pt/.config/i3/wallpapers/bg.png
+
+#################
+# xorg settings #
+#################
+
+# screen saver blank time
+exec --no-startup-id xset s 1800 1800
+# disable dpms
+exec --no-startup-id xset -dpms
 
 ###########
 # layouts #
@@ -174,7 +187,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'exit i3?' -b 'ugh, sure, yea' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -240,14 +253,13 @@ mode "$mode_gaps_outer" {
 }
 
 # shutdown
-set $Locker i3lock-fancy -t $USER@$HOSTNAME && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker , mode "default"
+    bindsym l exec --no-startup-id $locker , mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym s exec --no-startup-id $locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $locker && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id sudo systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id sudo systemctl poweroff, mode "default"  
 
