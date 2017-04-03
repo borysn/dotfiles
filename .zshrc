@@ -14,12 +14,12 @@ SAVEHIST=${HISTSIZE}
 export EDITOR=nvim
 export TERM=rxvt-256color
 export BROWSER=firefox
-export TMP=${ZDOTDIR}/.tmp
-export TEMP=${TMP}
-export TMPDIR=${TMP}
-export TMPPREFIX=${TMPDIR}/zsh
+export TMP="${ZDOTDIR}/.tmp"
+export TEMP="${TMP}"
+export TMPDIR="${TMP}"
+export TMPPREFIX="${TMPDIR}/zsh"
 
-if [ ! -d '${TMP}' ]; then mkdir '${TMP}'; fi
+if [ ! -d "${TMP}" ]; then mkdir "${TMP}"; fi
 
 ########
 # path #
