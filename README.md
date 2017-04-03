@@ -40,7 +40,7 @@
 * seahorse
 * lxappearance
 * pavucontrol
-* [sdkman](sdkman.io)
+* [sdkman](http://sdkman.io)
 
 ## required fonts
 * hack
