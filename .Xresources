@@ -1,3 +1,7 @@
+! .Xresources
+! author: borysn
+! license: what's a license?
+
 ! x config
 Xcursor.theme: gentoo
 Xcursor.size: 24
