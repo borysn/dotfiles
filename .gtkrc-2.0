@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/p3pt/.gtkrc-2.0.mine"
-gtk-theme-name="Adwaita-dark"
+gtk-theme-name="Adwaita"
 gtk-icon-theme-name="Vivacious-NonMono-Light-Pink"
 gtk-font-name="Noto Sans 10"
 gtk-cursor-theme-name="Adwaita"
@@ -14,6 +14,6 @@ gtk-menu-images=1
 gtk-enable-event-sounds=1
 gtk-enable-input-feedback-sounds=1
 gtk-xft-antialias=1
-gtk-xft-hinting=1
+gtk-xft-hinting=0
 gtk-xft-hintstyle="hintfull"
 gtk-xft-rgba="vrgb"
