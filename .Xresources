@@ -54,19 +54,35 @@ Xft*hinting: Full
 URxvt*background: [85]#434871
 URxvt.foreground: #f3f4f5
 
-URxvt.color0  : #772549
-URxvt.color8  : #772549
-URxvt.color1  : #9f436c 
-URxvt.color9  : #9f436c 
+URxvt.color0  : #b2628c
+URxvt.color8  : #b2628c
+URxvt.color1  : #7b51dd
+URxvt.color9  : #7b51dd
 URxvt.color2  : #d35a7c 
 URxvt.color10 : #d35a7c 
 URxvt.color3  : #da6c94
 URxvt.color11 : #da6c94
 URxvt.color4  : #9763f6
 URxvt.color12 : #9763f6
-URxvt.color5  : #7b51dd
-URxvt.color13 : #7b51dd
-URxvt.color6  : #3c3660 
-URxvt.color14 : #3c3660 
+URxvt.color5  : #3c3660 
+URxvt.color13 : #3c3660 
+URxvt.color6  : #9f436c 
+URxvt.color14 : #9f436c 
 URxvt.color7  : #322d51 
 URxvt.color15 : #322d51 
+#URxvt.color0  : #772549
+#URxvt.color8  : #772549
+#URxvt.color1  : #9f436c 
+#URxvt.color9  : #9f436c 
+#URxvt.color2  : #d35a7c 
+#URxvt.color10 : #d35a7c 
+#URxvt.color3  : #da6c94
+#URxvt.color11 : #da6c94
+#URxvt.color4  : #9763f6
+#URxvt.color12 : #9763f6
+#URxvt.color5  : #7b51dd
+#URxvt.color13 : #7b51dd
+#URxvt.color6  : #3c3660 
+#URxvt.color14 : #3c3660 
+#URxvt.color7  : #322d51 
+#URxvt.color15 : #322d51 
