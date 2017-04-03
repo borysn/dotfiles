@@ -14,10 +14,10 @@ SAVEHIST=${HISTSIZE}
 export EDITOR=nvim
 export TERM=rxvt-256color
 export BROWSER=firefox
-export TMP="${ZDOTDIR}/.tmp"
-export TEMP="${TMP}"
-export TMPDIR="${TMP}"
-export TMPPREFIX="${TMPDIR}/zsh"
+export TMP=$ZDOTDIR/.tmp
+export TEMP=$TMP
+export TMPDIR=$TMP
+export TMPPREFIX=$TMPDIR/zsh
 
 if [ ! -d $TMP ]; then mkdir $TMP; fi
 
@@ -111,7 +111,7 @@ bindkey '^E' end-of-line #ctrl-e
 # alias' #
 ##########
 
-alias clock='tty-clock -c -C 6 -t'
+alias clock='tty-clock -c -C 2 -t'
 alias reboot='sudo systemctl reboot'
 alias poweroff='sudo systemctl poweroff'
 alias halt='sudo systemctl halt'
