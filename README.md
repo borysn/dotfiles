@@ -5,12 +5,16 @@
 [screenshot album](https://imgur.com/a/fGqVk)
 
 ## info
+* os: Gentoo/Linux x86_64
+* kernel: 4.9.16-gentoo
+* wm: i3
 * theme: Adwaita
-* icon theme: Vivacious-NonMono-Light-Pink
+* icons: Vivacious-NonMono-Light-Pink
+* terminal: urxvt
 * vim colorscheme: dracula
 * vim-airline theme: behelit
 
-## required applications
+## applications
 * i3-gaps
 * i3lock-fancy
 * i3lock-colors
@@ -32,9 +36,6 @@
 * compton
 * scrot
 * numlockx
-  
-
-## optional aplications
 * gnome-notification-daemon
 * gnome-keyring
 * seahorse
@@ -42,7 +43,7 @@
 * pavucontrol
 * [sdkman](http://sdkman.io)
 
-## required fonts
+## fonts
 * hack
 * noto
 * [ionicons](/os/gentoo/desktop/usr/share/fonts/ionicons)
