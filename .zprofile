@@ -1,4 +1,6 @@
 # .zprofile
+# author: borysn
+# license: what's a license?
 
 ##########
 # sdkman #

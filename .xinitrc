@@ -1,3 +1,7 @@
+# .xinitrc
+# author: borysn
+# license: what's a license?
+
 source "$HOME/.zprofile"
 gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 eval `ssh-agent -s`
