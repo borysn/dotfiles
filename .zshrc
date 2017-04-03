@@ -19,7 +19,7 @@ export TEMP="${TMP}"
 export TMPDIR="${TMP}"
 export TMPPREFIX="${TMPDIR}/zsh"
 
-if [ ! -d "${TMP}" ]; then mkdir "${TMP}"; fi
+if [ ! -d $TMP ]; then mkdir $TMP; fi
 
 ########
 # path #
