@@ -5,7 +5,7 @@
 [screenshot album](https://imgur.com/a/fGqVk)
 
 ## info
-* theme: Flatabulous-blue-dark-new
+* theme: Adwaita
 * icon theme: Vivacious-NonMono-Light-Pink
 * vim colorscheme: dracula
 * vim-airline theme: behelit
@@ -14,13 +14,33 @@
 * i3-gaps
 * i3lock-fancy
 * i3lock-colors
+* [i3-lm](https://github.com/borysn/i3-lm)
 * urxvt
+    - with urxvt-perls
+* nvim
+    - python client variant 
+    - [vim-plug](https://github.com/junegunn/vim-plug)
 * feh
 * rofi 
-* polybar 
+* polybar
+    - module support for
+        * i3
+        * audio
+        * network
+        * mpd
+        * github
 * compton
 * scrot
 * numlockx
+  
+
+## optional aplications
+* gnome-notification-daemon
+* gnome-keyring
+* seahorse
+* lxappearance
+* pavucontrol
+* [sdkman](https://sdkman.io)
 
 ## required fonts
 * hack
