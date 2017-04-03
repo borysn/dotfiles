@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#
+# sync repo's &
+# update gentoo system
+#
+
+sudo layman -S
+sudo eix-sync
+sudo emerge -a --update --deep --with-bdeps=y @world @steam
+sudo emerge --depclean
+sudo emerge --update --newuse --deep @world @steam
