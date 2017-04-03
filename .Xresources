@@ -1,3 +1,7 @@
+! x config
+Xcursor.theme: gentoo
+Xcursor.size: 24
+
 ! URxvt
 
 ! General settings
@@ -65,12 +69,12 @@ URxvt.color11 : #45afc1
 URxvt.color4  : #d1a2fd
 URxvt.color12 : #be95ab 
 
-URxvt.color5  : #37227d 
+URxvt.color5  : #322d51 
 URxvt.color13 : #7b51dd 
 
 URxvt.color6  : #d66c94
 URxvt.color14 : #acc1c9
 
-URxvt.color7  : #322d51 
+URxvt.color7  : #37227d 
 URxvt.color15 : #9f436c 
 
