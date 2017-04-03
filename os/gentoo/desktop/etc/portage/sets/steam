@@ -1,5 +1,4 @@
 # mandatory!
-# add this file to /etc/portage/sets/
 dev-libs/glib:2
 dev-libs/libgcrypt
 dev-libs/nspr
@@ -33,6 +32,7 @@ x11-libs/libXfixes
 x11-libs/libXi
 x11-libs/libXrandr
 x11-libs/libXrender
+x11-libs/libXScrnSaver
 x11-libs/pango
 x11-libs/pixman
 
