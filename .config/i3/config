@@ -72,9 +72,8 @@ for_window [instance="seahorse" class="Seahorse"] floating enable
 # startup #
 ###########
 set $locker i3lock-fancy -t $USER@$HOSTNAME && sleep 1
-exec xautolock -time .5 -locker $locker
+exec xautolock -time .5 -locker $locker -detectsleep
 exec --no-startup-id numlockx on
-exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 exec --no-startup-id polybar -c /home/p3pt/.config/i3/polybar/topbar.ini topbar 
 exec_always --no-startup-id feh --bg-center /home/p3pt/.config/i3/wallpapers/bg.png
 
