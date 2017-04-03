@@ -1,7 +1,3 @@
-! .xinitrc
-! author: borysn
-! license: what's a license?
-
 ! x config
 Xcursor.theme: gentoo
 Xcursor.size: 24
@@ -60,16 +56,16 @@ URxvt.foreground: #f3f4f5
 
 URxvt.color0  : #b2628c
 URxvt.color8  : #b2628c
-URxvt.color1  : #7b51dd
-URxvt.color9  : #7b51dd
+URxvt.color1  : #3c3660 
+URxvt.color9  : #3c3660 
 URxvt.color2  : #d35a7c 
 URxvt.color10 : #d35a7c 
 URxvt.color3  : #da6c94
 URxvt.color11 : #da6c94
-URxvt.color4  : #9763f6
-URxvt.color12 : #9763f6
-URxvt.color5  : #3c3660 
-URxvt.color13 : #3c3660 
+URxvt.color4  : #7b51dd
+URxvt.color12 : #7b51dd
+URxvt.color5  : #9763f6
+URxvt.color13 : #9763f6
 URxvt.color6  : #9f436c 
 URxvt.color14 : #9f436c 
 URxvt.color7  : #322d51 
