@@ -1,8 +1,14 @@
 #!/bin/bash
 
+# shutdownforusers
+# author: borysn
+# license: what's a license?
+
 #
-# enable power options for all users
-#
+# enable power options for all users in shutdown group.
+# please add target users to the shutdown group after
+# running the script.
+# 
 
 # array of commands
 CMDS=(shutdown reboot poweroff)
