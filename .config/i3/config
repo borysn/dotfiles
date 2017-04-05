@@ -63,7 +63,7 @@ new_window 1pixel
 # individual window settings #
 ##############################
 
-for_window [instance="Steam" class="Steam"] floating enable
+#for_window [instance="Steam" class="Steam"] floating enable
 for_window [instance="pavucontrol" class="Pavucontrol"] floating enable
 for_window [instance="lxapperance" class="Lxappearance"] floating enable
 for_window [instance="seahorse" class="Seahorse"] floating enable
