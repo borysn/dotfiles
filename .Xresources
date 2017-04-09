@@ -1,7 +1,3 @@
-! .Xresources
-! author: borysn
-! license: what's a license?
-
 ! x config
 Xcursor.theme: gentoo
 Xcursor.size: 24
@@ -15,6 +11,7 @@ URxvt.scrollstyle: rxvt
 URxvt*termName: rxvt-256color
 URxvt.urgentOnBell: True
 URxvt.cursorBlink: True
+URxvt.cursorUnderline: True
 URxvt.iso14755: False
 URxvt.internalBorder: 30
 ! urls
