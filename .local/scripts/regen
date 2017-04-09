@@ -1,0 +1,10 @@
+#!/bin/zsh
+#
+
+#
+# regen
+#
+env-update
+genkernel --install initramfs
+rm /boot/initramfs
+cp /boot/initramfs-* /boot/initramfs
