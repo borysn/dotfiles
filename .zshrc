@@ -7,10 +7,10 @@
 ################
 
 umask 077
-ZDOTDIR="${ZDOTDIR:-${HOME}}"
-HISTFILE="${ZDOTDIR}/.zsh/.histfile"
+ZDOTDIR=${ZDOTDIR:-${HOME}}
+HISTFILE=${ZDOTDIR}/.zsh/.histfile
 HISTSIZE=10000
-SAVEHIST="${HISTSIZE}"
+SAVEHIST=${HISTSIZE}
 export EDITOR=nvim
 export TERM=rxvt-256color
 export BROWSER=firefox
