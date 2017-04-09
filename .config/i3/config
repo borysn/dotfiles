@@ -100,7 +100,7 @@ exec --no-startup-id i3-lm l 1 /home/p3pt/.config/i3/layouts/busy.json
 bindsym --release $mod+Print exec scrot -q 100 '%Y-%m-%d_%H%M%S_$wx$h.png' -e 'mv $f ~/Pictures/screenshots/'
 
 # start rofi (a program launcher)
-bindsym $mod+d exec "rofi -combi-modi window,drun,run -show combi -modi combi -lines 10 -width 50 -padding 100 -font 'Noto Sans 12'"
+bindsym $mod+d exec "rofi -combi-modi window,drun,run -show combi -modi combi -lines 4 -width 30 -padding 70 -font 'Noto Sans 12'"
 
 # start a terminal
 bindsym $mod+Return exec rofi-sensible-terminal
