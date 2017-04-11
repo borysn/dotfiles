@@ -1,5 +1,0 @@
-defaults.bluealsa {
-  interface "hci0"
-  device "FC:58:FA:57:64:CE"
-  profile "a2dp"
-}
