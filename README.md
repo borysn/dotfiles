@@ -56,3 +56,6 @@
 
 ## thanks to VansDesign for the wallpaper!
 [wallpaper](https://www.reddit.com/r/wallpapers/comments/5jzzir/low_poly_wall_i_created_inspired_by_a_game_called/)
+
+## license
+what's a license?
