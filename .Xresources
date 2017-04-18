@@ -21,7 +21,7 @@ dzen2.background:#1b123a
 ! URxvt !
 !!!!!!!!!
 
-! General settings
+! general settings
 URxvt.saveLines: 100000
 URxvt.scrollBar: False
 URxvt.scrollstyle: rxvt
@@ -36,7 +36,7 @@ URxvt*depth: 32
 !URxvt.transparent: true
 !URxvt.shading: 10
 
-! Extensions
+! extensions
 URxvt.perl-ext-common: default,clipboard,keyboard-select,url-select
 URxvt.urlLauncher: xdg-open
 URxvt.urlButton: 1
@@ -45,7 +45,7 @@ URxvt.underlineURLs: True
 URxvt.copyCommand:  xclip -i -selection clipboard
 URxvt.pasteCommand: xclip -o -selection clipboard
 
-! Keybindings
+! keybindings
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.keysym.Mod4-c: perl:clipboard:copy
@@ -58,7 +58,7 @@ URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.C-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-u: perl:url-select:select_next
 
-! Font
+! font
 
 URxvt.font: xft:Hack:pixelsize=14:style=regular:antialias=true:hinting=true xft:FontAwesome:size=14 xft:Symbola:size=14 xft:Unifont:size=14
 URxvt.boldFont: xft:Hack:pixelsize=14:style=bold:antialias=true:hinting=true
@@ -72,19 +72,19 @@ Xft*hinting: Full
 URxvt*background: [85]#434871
 URxvt.foreground: #f3f4f5
 
-URxvt.color0  : #b2628c
-URxvt.color8  : #b2628c
-URxvt.color1  : #3c3660
-URxvt.color9  : #3c3660
-URxvt.color2  : #d35a7c
-URxvt.color10 : #d35a7c
-URxvt.color3  : #da6c94
-URxvt.color11 : #da6c94
-URxvt.color4  : #7b51dd
-URxvt.color12 : #7b51dd
-URxvt.color5  : #9763f6
-URxvt.color13 : #9763f6
-URxvt.color6  : #9f436c
-URxvt.color14 : #9f436c
-URxvt.color7  : #322d51
-URxvt.color15 : #322d51
+URxvt.color0  : #9f436c
+URxvt.color8  : #9f436c
+URxvt.color1  : #9763f6
+URxvt.color9  : #9763f6
+URxvt.color2  : #da6c94
+URxvt.color10 : #da6c94
+URxvt.color3  : #45b5c2
+URxvt.color11 : #45b5c2
+URxvt.color4  : #aa74f8
+URxvt.color12 : #aa74f8
+URxvt.color5  : #7b51dd
+URxvt.color13 : #7b51dd
+URxvt.color6  : #d35a7c
+URxvt.color14 : #d35a7c
+URxvt.color7  : #3c3760
+URxvt.color15 : #3c3760
