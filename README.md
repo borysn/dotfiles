@@ -50,6 +50,7 @@
 ## fonts
 * hack
 * noto
+* symbola
 * [ionicons](/os/gentoo/desktop/usr/share/fonts/ionicons)
 * fontawesome
 * [siji](/os/gentoo/desktop/usr/share/fonts/siji)
