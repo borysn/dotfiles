@@ -1,8 +1,25 @@
-! x config
+! .Xresources
+! author: borysn
+! lcense: what's a license?
+
+!!!!!!!!!!!!
+! x config !
+!!!!!!!!!!!!
+
 Xcursor.theme: gentoo
 Xcursor.size: 24
 
-! URxvt
+!!!!!!!!!
+! dzen2 !
+!!!!!!!!!
+
+dzen2.font: noto
+dzen2.foreground:#d66c94
+dzen2.background:#1b123a
+
+!!!!!!!!!
+! URxvt !
+!!!!!!!!!
 
 ! General settings
 URxvt.saveLines: 100000
@@ -43,9 +60,9 @@ URxvt.keysym.M-u: perl:url-select:select_next
 
 ! Font
 
-URxvt.font: xft:Hack:pixelsize=14,style=regular xft:Ionicons:pixelsize=14 xft:FontAwesome:pixelsize=14 xft:Siji:pixelsize=14 xft:unicode:pixelsize=14
-URxvt.boldFont: xft:Hack:pixelsize=14,style=bold  
-URxvt.letterSpace: -1
+URxvt.font: xft:Hack:pixelsize=14:style=regular:antialias=true:hinting=true xft:FontAwesome:size=14 xft:Symbola:size=14 xft:Unifont:size=14
+URxvt.boldFont: xft:Hack:pixelsize=14:style=bold:antialias=true:hinting=true
+URxvt.letterSpace: 0
 Xft*dpi: 96
 Xft*antialias: True
 Xft*hinting: Full
@@ -57,17 +74,17 @@ URxvt.foreground: #f3f4f5
 
 URxvt.color0  : #b2628c
 URxvt.color8  : #b2628c
-URxvt.color1  : #3c3660 
-URxvt.color9  : #3c3660 
-URxvt.color2  : #d35a7c 
-URxvt.color10 : #d35a7c 
+URxvt.color1  : #3c3660
+URxvt.color9  : #3c3660
+URxvt.color2  : #d35a7c
+URxvt.color10 : #d35a7c
 URxvt.color3  : #da6c94
 URxvt.color11 : #da6c94
 URxvt.color4  : #7b51dd
 URxvt.color12 : #7b51dd
 URxvt.color5  : #9763f6
 URxvt.color13 : #9763f6
-URxvt.color6  : #9f436c 
-URxvt.color14 : #9f436c 
-URxvt.color7  : #322d51 
-URxvt.color15 : #322d51 
+URxvt.color6  : #9f436c
+URxvt.color14 : #9f436c
+URxvt.color7  : #322d51
+URxvt.color15 : #322d51
