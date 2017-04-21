@@ -13,8 +13,8 @@ font pango:Noto Sans 11
 floating_modifier $mod
 
 # gaps
-gaps inner 16
-gaps outer 4
+gaps inner 21
+gaps outer 3
 
 ##########
 # colors #
@@ -72,11 +72,11 @@ for_window [instance="pcmanfm" class="Pcmanfm"] floating enable
 ###########
 # startup #
 ###########
-set $locker "i3lock-fancy -time 1 -t $USER@$HOST && sleep 1"
+set $locker "i3lock-fancy -t $USER@$HOST && sleep 1"
 exec --no-startup-id numlockx on
 exec --no-startup-id polybar -c ~/.config/i3/polybar/topbar.ini topbar
 exec_always --no-startup-id feh --bg-center ~/.config/i3/wallpapers/bg.png
-exec_always --no-startup-id xautolock -locker $locker -detectsleep
+exec_always --no-startup-id xautolock -time 15 -locker $locker -detectsleep
 
 ############################
 # pulse audio/media player #
