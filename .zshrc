@@ -8,11 +8,11 @@
 
 umask 077
 ZDOTDIR=${ZDOTDIR:-${HOME}}
+TERM=rxvt-unicode-256color
 HISTFILE=${ZDOTDIR}/.zsh/.histfile
 HISTSIZE=10000
 SAVEHIST=${HISTSIZE}
 export EDITOR=nvim
-export TERM=rxvt-256color
 export BROWSER=firefox
 export TMP=$ZDOTDIR/.tmp
 export TEMP=$TMP

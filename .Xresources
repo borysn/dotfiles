@@ -24,6 +24,9 @@ dzen2.background: #1b123a
 ! general settings
 URxvt.saveLines: 100000
 URxvt.scrollBar: False
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
 URxvt.scrollstyle: rxvt
 URxvt*termName: rxvt-256color
 URxvt.urgentOnBell: True
@@ -62,7 +65,7 @@ URxvt.keysym.M-u: perl:url-select:select_next
 
 URxvt.font: xft:Hack:pixelsize=14:style=regular:antialias=true:hinting=true xft:Symbola:size=14
 URxvt.boldFont: xft:Hack:pixelsize=14:style=bold:antialias=true:hinting=true
-URxvt.letterSpace: 0
+URxvt.letterSpace: -1
 Xft*dpi: 96
 Xft*antialias: True
 Xft*hinting: Full

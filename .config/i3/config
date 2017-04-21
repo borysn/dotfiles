@@ -13,8 +13,8 @@ font pango:Noto Sans 11
 floating_modifier $mod
 
 # gaps
-gaps inner 8
-gaps outer 2
+gaps inner 16
+gaps outer 4
 
 ##########
 # colors #
@@ -72,11 +72,24 @@ for_window [instance="pcmanfm" class="Pcmanfm"] floating enable
 ###########
 # startup #
 ###########
-set $locker i3lock-fancy -t $USER@$HOSTNAME && sleep 1
-exec xautolock -time .5 -locker $locker -detectsleep
+set $locker "i3lock-fancy -time 1 -t $USER@$HOST && sleep 1"
 exec --no-startup-id numlockx on
-exec --no-startup-id polybar -c /home/p3pt/.config/i3/polybar/topbar.ini topbar 
-exec_always --no-startup-id feh --bg-center /home/p3pt/.config/i3/wallpapers/bg.png
+exec --no-startup-id polybar -c ~/.config/i3/polybar/topbar.ini topbar
+exec_always --no-startup-id feh --bg-center ~/.config/i3/wallpapers/bg.png
+exec_always --no-startup-id xautolock -locker $locker -detectsleep
+
+############################
+# pulse audio/media player #
+############################
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +3%
+bindcode 115 exec --no-startup-id pactl set-sink-volume 0 +3%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -3%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 
 #################
 # xorg settings #
@@ -90,7 +103,7 @@ exec --no-startup-id xset -dpms
 ###########
 # layouts #
 ###########
-exec --no-startup-id i3-lm l 1 /home/p3pt/.config/i3/layouts/busy.json 
+exec --no-startup-id i3-lm l 1 ~/.config/i3/layouts/busy.json
 
 ################
 # key bindings #

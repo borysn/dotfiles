@@ -1,0 +1,4 @@
+# package.unmask# required by www-client/chromium-57.0.2987.133::gentoo[system-ffmpeg]
+# required by chromium (argument)
+# /etc/portage/package.mask/ffmpeg:
+=media-video/ffmpeg-3.2.4

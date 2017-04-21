@@ -1,0 +1,146 @@
+# package.use# required by gnome-base/gnome-keyring-3.20.0::gentoo
+# required by sys-auth/pambase-20150213::gentoo[gnome-keyring]
+# required by sys-apps/openrc-0.24.2::gentoo[pam]
+# required by @system
+# required by @world (argument)
+>=app-crypt/gcr-3.20.0 gtk
+# required by dev-qt/qtcore-5.6.2-r1::gentoo
+# required by dev-qt/qtgui-5.6.2::gentoo
+# required by app-crypt/pinentry-0.9.7-r1::gentoo[qt5]
+# required by gnome-base/gnome-keyring-3.20.0::gentoo
+# required by sys-auth/pambase-20150213::gentoo[gnome-keyring]
+# required by sys-apps/openrc-0.24.2::gentoo[pam]
+# required by @system
+# required by @world (argument)
+>=dev-libs/libpcre-8.40-r1 pcre16
+# required by app-doc/doxygen-1.8.13-r1::gentoo[latex]
+# required by sys-apps/dbus-1.10.12::gentoo[doc]
+# required by sys-apps/systemd-226-r2::gentoo
+# required by sys-apps/util-linux-2.28.2::gentoo[-build,systemd]
+# required by @system
+# required by @world (argument)
+>=app-text/texlive-2015 extra
+# required by media-libs/fontconfig-2.11.1-r2::gentoo[doc]
+# required by app-eselect/eselect-fontconfig-1.1::gentoo
+>=app-text/docbook-sgml-utils-0.6.14-r1 jadetex
+# required by dev-libs/icu-58.1-r1::gentoo[doc]
+# required by dev-tex/bibtexu-3.71_p20150521::gentoo
+# required by app-text/texlive-core-2015-r1::gentoo
+# required by dev-texlive/texlive-genericrecommended-2015::gentoo
+# required by app-text/jadetex-3.13-r6::gentoo
+# required by app-text/docbook-sgml-utils-0.6.14-r1::gentoo[jadetex]
+# required by media-libs/fontconfig-2.11.1-r2::gentoo[doc]
+# required by app-eselect/eselect-fontconfig-1.1::gentoo
+>=app-doc/doxygen-1.8.13-r1 dot
+# required by media-gfx/graphviz-2.38.0-r1::gentoo
+# required by app-doc/doxygen-1.8.13-r1::gentoo[dot]
+# required by x11-libs/libX11-1.6.5::gentoo[doc]
+# required by x11-libs/gdk-pixbuf-2.36.5::gentoo[X]
+# required by gnome-base/librsvg-2.40.16::gentoo
+>=media-libs/gd-2.2.4 fontconfig
+# required by dev-util/itstool-2.0.2::gentoo
+# required by gnome-extra/yelp-xsl-3.20.1::gentoo
+# required by app-text/yelp-tools-3.18.0::gentoo
+# required by dev-util/gtk-doc-1.25-r1::gentoo
+# required by sys-apps/kmod-23::gentoo[doc]
+# required by sys-apps/systemd-226-r2::gentoo[kmod]
+# required by sys-auth/polkit-0.113::gentoo[systemd]
+# required by x11-misc/colord-1.3.4::gentoo[policykit]
+# required by x11-libs/gtk+-3.22.11::gentoo[colord]
+# required by net-dns/avahi-0.6.32::gentoo[gtk3]
+# required by media-sound/pulseaudio-10.0::gentoo[zeroconf]
+# required by media-libs/libsdl-1.2.15-r9::gentoo[pulseaudio]
+# required by dev-libs/zziplib-0.13.62-r1::gentoo[sdl]
+# required by app-text/texlive-core-2015-r1::gentoo
+# required by app-text/texlive-2015::gentoo
+# required by app-doc/doxygen-1.8.13-r1::gentoo[latex]
+# required by x11-libs/xcb-util-renderutil-0.3.9-r1::gentoo[doc]
+# required by x11-libs/xcb-util-cursor-0.1.3-r1::gentoo
+# required by x11-libs/xcb-util-0.4.0::gentoo
+# required by x11-libs/xcb-util-image-0.4.0::gentoo
+# required by dev-qt/qtgui-5.6.2::gentoo[xcb]
+# required by dev-util/cmake-3.7.2::gentoo[qt5]
+# required by media-libs/freeglut-3.0.0::gentoo
+# required by media-libs/ftgl-2.1.3_rc5::gentoo
+# required by media-libs/libcaca-0.99_beta19::gentoo[truetype,opengl]
+>=dev-libs/libxml2-2.9.4-r1 python
+# required by dev-texlive/texlive-xetex-2015::gentoo
+# required by dev-texlive/texlive-formatsextra-2015::gentoo
+# required by app-text/texlive-2015::gentoo[extra]
+# required by app-doc/doxygen-1.8.13-r1::gentoo[latex]
+# required by x11-libs/xcb-util-renderutil-0.3.9-r1::gentoo[doc]
+# required by x11-libs/xcb-util-cursor-0.1.3-r1::gentoo
+# required by x11-libs/xcb-util-0.4.0::gentoo
+# required by x11-libs/xcb-util-image-0.4.0::gentoo
+# required by dev-qt/qtgui-5.6.2::gentoo[xcb]
+# required by dev-util/cmake-3.7.2::gentoo[qt5]
+# required by media-libs/freeglut-3.0.0::gentoo
+# required by media-libs/ftgl-2.1.3_rc5::gentoo
+# required by media-libs/libcaca-0.99_beta19::gentoo[truetype,opengl]
+# required by media-libs/libsdl-1.2.15-r9::gentoo[libcaca]
+# required by dev-libs/zziplib-0.13.62-r1::gentoo[sdl]
+>=app-text/texlive-core-2015-r1 xetex
+# required by app-text/texlive-core-2015-r1::gentoo[xetex]
+# required by dev-texlive/texlive-genericrecommended-2015::gentoo
+# required by app-text/jadetex-3.13-r6::gentoo
+# required by app-text/docbook-sgml-utils-0.6.14-r1::gentoo[jadetex]
+# required by media-libs/fontconfig-2.11.1-r2::gentoo[doc]
+# required by x11-libs/motif-2.3.6-r1::gentoo[xft]
+# required by app-text/xdvik-22.87.03::gentoo[motif]
+# required by app-text/texlive-2015::gentoo[X]
+# required by app-doc/doxygen-1.8.13-r1::gentoo[latex]
+# required by dev-util/ninja-1.6.0::gentoo[doc]
+# required by sys-devel/llvm-3.9.1-r1::gentoo
+# required by media-libs/mesa-13.0.5::gentoo[llvm]
+# required by media-libs/libepoxy-1.4.1::gentoo
+# required by x11-libs/gtk+-3.22.11::gentoo
+# required by net-dns/avahi-0.6.32::gentoo[gtk3]
+# required by media-sound/pulseaudio-10.0::gentoo[zeroconf]
+# required by media-libs/libsdl-1.2.15-r9::gentoo[pulseaudio]
+# required by dev-libs/zziplib-0.13.62-r1::gentoo[sdl]
+>=media-libs/harfbuzz-1.4.5 icu
+# required by dev-qt/qtwebkit-5.6.2::gentoo
+# required by dev-qt/qt-creator-3.6.1::gentoo[webkit]
+# required by qt-creator (argument)
+>=dev-qt/qtcore-5.6.2-r1 icu
+# required by www-client/firefox-45.8.0::gentoo
+# required by firefox (argument)
+>=dev-lang/python-2.7.12:2.7 sqlite
+# required by www-client/firefox-45.8.0::gentoo[system-libvpx]
+# required by firefox (argument)
+>=media-libs/libvpx-1.5.0 postproc svc
+# required by www-client/chromium-57.0.2987.133::gentoo
+# required by chromium (argument)
+>=dev-libs/libxml2-2.9.4-r1 icu
+# required by x11-misc/xdg-utils-1.1.1-r1::gentoo
+# required by net-print/cups-2.1.4::gentoo[X]
+# required by www-client/google-chrome-57.0.2987.133::gentoo
+# required by google-chrome (argument)
+>=app-text/xmlto-0.0.26-r1 text
+# required by dev-python/wxpython-2.8.12.1-r2::gentoo
+# required by app-emulation/playonlinux-4.2.10-r1::gentoo
+# required by playonlinux (argument)
+>=x11-libs/wxGTK-2.8.12.1-r1:2.8 tiff
+# required by app-forensics/rkhunter-1.4.2::gentoo
+# required by rkhunter (argument)
+>=sys-process/lsof-4.89 rpc
+# required by media-libs/libsdl2-2.0.4::gentoo[wayland]
+# required by media-video/ffmpeg-3.2.4::gentoo[sdl]
+# required by www-client/chromium-57.0.2987.133::gentoo[system-ffmpeg]
+# required by chromium (argument)
+>=media-libs/mesa-13.0.5 gles2
+# required by x11-misc/rofi-1.3.1::gentoo
+# required by rofi (argument)
+>=x11-libs/cairo-1.14.8 xcb
+# required by x11-misc/pcmanfm-1.2.3::gentoo
+# required by pcmanfm (argument)
+>=x11-libs/libfm-1.2.4 gtk
+# required by app-misc/neofetch-2.0.2::gentoo[X]
+# required by neofetch (argument)
+>=www-client/w3m-0.5.3-r9 imlib
+# required by app-emulation/docker-17.04.0::gentoo[container-init]
+# required by =app-emulation/docker-17.04.0 (argument)
+>=sys-process/tini-0.13.2 static
+# required by media-sound/ncmpcpp-0.7.7::gentoo[unicode]
+# required by ncmpcpp (argument)
+>=dev-libs/boost-1.62.0-r1 icu
