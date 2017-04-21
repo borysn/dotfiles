@@ -13,8 +13,8 @@ font pango:Noto Sans 11
 floating_modifier $mod
 
 # gaps
-gaps inner 21
-gaps outer 3
+gaps inner 35
+gaps outer 25
 
 ##########
 # colors #
