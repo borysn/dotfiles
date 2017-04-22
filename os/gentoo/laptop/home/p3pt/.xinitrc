@@ -6,7 +6,7 @@ source "$HOME/.zprofile"
 gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 eval `ssh-agent -s`
 xrdb -merge "$HOME/.Xresources"
-compton -cCGfF -b -i 0.75 --vsync opengl
+compton --respect-prop-shadow -b
 urxvtd -q -o -f
 syndaemon -d -i 1.0 -K -R -t
 exec dbus-launch i3
