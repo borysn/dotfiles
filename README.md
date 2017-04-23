@@ -1,8 +1,8 @@
 # dotfiles
 
-![screenshot](http://i.imgur.com/PpsgzjO.png)
+![screenshot](http://i.imgur.com/oE9o2fa.jpg)
 
-[screenshot album](https://imgur.com/a/fGqVk)
+[screenshot album](https://imgur.com/a/Ft6jk)
 
 ## info
 * os: Gentoo/Linux x86_64
