@@ -4,6 +4,11 @@
 
 [screenshot album](https://imgur.com/a/Ft6jk)
 
+## pop dreams
+a gentoo desktop rice ([tower & laptop variants](os/gentoo))
+
+*when girl gives you lemons, you `make install` & `rice`*
+
 ## info
 * os: Gentoo/Linux x86_64
 * kernel: 4.9.16-gentoo
