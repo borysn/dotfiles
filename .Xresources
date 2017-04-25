@@ -31,7 +31,7 @@ URxvt.scrollstyle: rxvt
 URxvt*termName: rxvt-256color
 URxvt.urgentOnBell: True
 URxvt.cursorBlink: True
-URxvt.cursorUnderline: True
+URxvt.cursorUnderline: False
 URxvt.iso14755: False
 URxvt.internalBorder: 30
 ! urls
