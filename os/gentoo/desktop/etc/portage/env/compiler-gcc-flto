@@ -1,0 +1,4 @@
+CC="gcc"
+CXX="g++"
+CFLAGS="-flto -march=native -02 -pipe"
+CXXFLAGS="${CFLAGS}"
