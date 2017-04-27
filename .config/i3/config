@@ -76,7 +76,7 @@ set $locker "i3lock-fancy -t $USER@$HOSTNAME && sleep 1"
 exec --no-startup-id numlockx on
 exec --no-startup-id polybar -c ~/.config/i3/polybar/topbar.ini topbar
 exec_always --no-startup-id feh --bg-center ~/.config/i3/wallpapers/bg.png
-exec_always --no-startup-id xautolock -time 15 -locker $locker -detectsleep
+exec_always --no-startup-id xautolock -time 25 -locker $locker -detectsleep
 
 ############################
 # pulse audio/media player #
