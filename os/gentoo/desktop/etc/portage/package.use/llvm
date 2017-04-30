@@ -1,0 +1,1 @@
+>=sys-devel/llvm-3.9.1-r1 default-libcxx default-compiler-rt gold
