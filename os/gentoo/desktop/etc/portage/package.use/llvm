@@ -1,1 +1,1 @@
->=sys-devel/llvm-3.9.1-r1 default-libcxx default-compiler-rt gold
+>=sys-devel/llvm-3.9.1-r1 default-libcxx default-compiler-rt gold abi_x86_32

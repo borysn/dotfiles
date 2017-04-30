@@ -1,0 +1,11 @@
+--- neovim-0.1.7.ebuild	2017-04-29 23:48:02.096739881 -0500
++++ neovim-0.1.7.ebuild.new	2017-04-30 00:00:25.490446181 -0500
+@@ -16,7 +16,7 @@
+ 
+ LICENSE="Apache-2.0 vim"
+ SLOT="0"
+-IUSE="+clipboard +luajit +nvimpager python ruby +tui +jemalloc"
++IUSE="+clipboard +luajit +nvimpager +python +ruby +tui +jemalloc"
+ 
+ CDEPEND=">=dev-libs/libuv-1.2.0
+ 	>=dev-libs/msgpack-1.0.0

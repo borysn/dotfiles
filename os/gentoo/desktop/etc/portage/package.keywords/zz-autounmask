@@ -80,3 +80,54 @@
 =dev-libs/libgcrypt-1.5.6-r101 ~amd64
 # required by cava (argument)
 =media-sound/cava-0.4.2 ~amd64
+# required by steam-meta (argument)
+=games-util/steam-meta-0-r20160817 ~amd64
+# required by games-util/steam-meta-0-r20160817::steam-overlay
+# required by steam-meta (argument)
+=games-util/steam-launcher-1.0.0.54-r1 ~amd64
+# required by games-util/steam-meta-0-r20160817::steam-overlay[steamruntime]
+# required by steam-meta (argument)
+=games-util/steam-games-meta-0-r20160812 ~amd64
+# required by games-util/steam-meta-0-r20160817::steam-overlay
+# required by steam-meta (argument)
+=games-util/steam-client-meta-0-r20160828 ~amd64
+# required by app-emulation/docker-17.04.0::gentoo
+# required by @selected
+# required by @world (argument)
+=app-emulation/containerd-0.2.5_p20170329 ~amd64
+# required by =app-emulation/docker-17.05.0_rc1 (argument)
+=app-emulation/docker-17.05.0_rc1 ~amd64
+# required by dev-util/cargo-0.17.0::gentoo
+=dev-lang/rust-1.16.0 ~amd64
+# required by dev-lang/rust-1.16.0::gentoo
+# required by rust (argument)
+=dev-util/cargo-0.17.0 ~amd64
+# required by dev-dotnet/msbuildtasks-1.5.0.196::dotnet
+# required by msbuildtasks (argument)
+=dev-dotnet/dotnetzip-semverd-1.9.3-r1 ~amd64
+# required by msbuildtasks (argument)
+=dev-dotnet/msbuildtasks-1.5.0.196 ~amd64
+# required by =notification-daemon-3.20.0 (argument)
+=x11-misc/notification-daemon-3.20.0 ~amd64
+# required by dev-util/mono-packaging-tools-1.4.2.2::dotnet
+# required by mono-packaging-tools (argument)
+=dev-dotnet/slntools-1.1.3_p201508170-r1 ~amd64
+# required by dev-util/mono-packaging-tools-1.4.2.2::dotnet
+# required by mono-packaging-tools (argument)
+=dev-dotnet/eto-parse-1.4.0_p20150907-r1 ~amd64
+# required by mono-packaging-tools (argument)
+=dev-util/mono-packaging-tools-1.4.2.2 ~amd64
+# required by dev-util/mono-packaging-tools-1.4.2.2::dotnet
+# required by mono-packaging-tools (argument)
+=dev-dotnet/mono-options-4.4.0.0 ~amd64
+# required by dev-util/mono-packaging-tools-1.4.2.2::dotnet[nupkg]
+# required by mono-packaging-tools (argument)
+=dev-dotnet/nuget-2.8.7-r2 ~amd64
+# required by dev-dotnet/nuget-2.8.7-r2::dotnet
+# required by dev-util/mono-packaging-tools-1.4.2.2::dotnet[nupkg]
+# required by mono-packaging-tools (argument)
+=dev-dotnet/xdt-for-monodevelop-2.8.1-r1 ~amd64
+# required by atom-bin (argument)
+=app-editors/atom-bin-1.2.0 ~amd64
+# required by neovim (argument)
+=app-editors/neovim-0.1.6 ~amd64
