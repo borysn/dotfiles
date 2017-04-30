@@ -6,6 +6,8 @@
 " vim-plug | https://github.com/junegunn/vim-plug "
 """""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.config/nvim/plugged')
+  " vim-lexical
+  Plug 'reedes/vim-lexical'
   " nerdtree | file tree
   Plug 'scrooloose/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -19,20 +21,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'scrooloose/syntastic'
   " vim-gitgutter | git status in gutter
   Plug 'airblade/vim-gitgutter'
-  " vim-javascript
-  Plug 'pangloss/vim-javascript'
-  " vim-jsx
-  Plug 'mxw/vim-jsx'
-  " vim-markdown
-  Plug 'tpope/vim-markdown'
-  " html5.vim
-  Plug 'othree/html5.vim'
-  " JSON.vim
-  Plug 'elzr/vim-json'
-  " dart-vim-plugin
-  Plug 'dart-lang/dart-vim-plugin'
-  " typescript-vim
-  Plug 'leafgarland/typescript-vim'
+  " polyglot language pack
+  Plug 'sheerun/vim-polyglot'
   " tagbar
   Plug 'majutsushi/tagbar'
   " vim-colorschemes
@@ -56,6 +46,9 @@ set number
 
 " history
 set history=25
+
+" yank & cut to system clipboard instead of registers
+set clipboard+=unnamedplus
 
 " no swap or backup, but auto write before running commands
 set noswapfile nobackup nowritebackup autowrite
@@ -124,20 +117,53 @@ hi CursorLine cterm=NONE ctermfg=NONE ctermbg=red
 " plugin config "
 """""""""""""""""
 
-" [nerd-tree]
+"------------"
+"[vim-lexical]"
+"------------"
+
+"augroup lexical
+"  command -nargs=0 LexEnCustom call lexical#init({
+"        \ 'spell': 1,
+"        \ 'spelllang':  ['en', 'custom'],
+"        \ 'dictionary': ['~/.config/nvim/dictionary/custom_words.txt', '/usr/share/dict/words'],
+"        \ 'thesaurus':  ['~/.config/nvim/thesaurus/custom-alts.txt', '~/.config/nvim/thesaurus/www.gutenberg.org/files/3202/files/mthesaur.txt'],
+"        \ 'spellfile':  ['~/.config/nvim/spell/ftp.vim.org/vim/runtime/spell/en.utf-8.add']
+"        \ })
+"augroup END
+
+"-----------"
+"[nerd-tree]"
+"-----------"
+" toggle nerd tree using ctrl+n, find current open file in tree
+map <C-n> :NERDTreeFind<CR>
+
+" open NERDTree with vim, but move cursor to open file
+"autocmd VimEnter * NERDTree | wincmd p
+
+" close nerd tree when open ing a file
+let g:NERDTreeQuitOnOpen = 1
+
 " auto open if no files specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" key shortcut toggle
-map <C-n> :NERDTreeToggle<CR>
+
 " close vim if nerd-tree is only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " default arrows
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
-" [tagbar]
+"--------"
+"[tagbar]"
+"--------"
+
+" toggle tagbar
 nmap <F8> :TagbarToggle<CR>
 
-" [airline]
+"---------"
+"[airline]"
+"---------"
+
+" set airline theme
 let g:airline_theme = 'behelit'
