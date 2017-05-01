@@ -1,4 +1,4 @@
 CC="gcc"
 CXX="g++"
-CFLAGS="-march=native -03 -pipe"
+CFLAGS="-march=native -O3 -pipe"
 CXXFLAGS="${CFLAGS}"
