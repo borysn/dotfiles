@@ -131,3 +131,158 @@
 =app-editors/atom-bin-1.2.0 ~amd64
 # required by neovim (argument)
 =app-editors/neovim-0.1.6 ~amd64
+# required by dev-ruby/racc-1.4.14::gentoo[ruby_targets_ruby24]
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.3.4::gentoo[rdoc]
+# required by dev-ruby/minitest-5.10.1::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.2.6::gentoo
+# required by dev-ruby/rake-12.0.0::gentoo[ruby_targets_ruby22]
+# required by dev-ruby/json-2.0.4::gentoo[-test,ruby_targets_ruby23]
+# required by dev-lang/ruby-2.1.9::gentoo
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby21]
+=dev-lang/ruby-2.4.1 ~amd64
+# required by app-editors/neovim-0.1.7::gentoo[ruby]
+# required by neovim (argument)
+=dev-ruby/neovim-ruby-client-0.3.2 ~amd64
+# required by dev-lang/ruby-2.4.1::gentoo[rdoc]
+# required by dev-ruby/minitest-5.10.1::gentoo[ruby_targets_ruby24]
+# required by dev-lang/ruby-2.3.4::gentoo
+# required by dev-ruby/rake-12.0.0::gentoo[ruby_targets_ruby23]
+# required by dev-ruby/json-2.0.4::gentoo[-test,ruby_targets_ruby23]
+# required by dev-lang/ruby-2.2.6::gentoo
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby22]
+=dev-ruby/rdoc-5.1.0 ~amd64
+# required by dev-lang/ruby-2.4.1::gentoo
+# required by dev-ruby/minitest-5.10.1::gentoo[ruby_targets_ruby24]
+# required by dev-lang/ruby-2.3.4::gentoo
+# required by dev-ruby/rake-12.0.0::gentoo[ruby_targets_ruby23]
+# required by dev-ruby/json-2.0.4::gentoo[-test,ruby_targets_ruby23]
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.2.6::gentoo[rdoc]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby22]
+=dev-ruby/power_assert-1.0.1-r1 ~amd64
+# required by dev-ruby/xmlrpc-0.3.0::fkmclane[ruby_targets_ruby24,-test]
+# required by dev-lang/ruby-2.4.1::gentoo
+# required by dev-ruby/minitest-5.10.1::gentoo[ruby_targets_ruby24]
+# required by dev-lang/ruby-2.3.4::gentoo
+# required by dev-ruby/rake-12.0.0::gentoo[ruby_targets_ruby23]
+# required by dev-ruby/json-2.0.4::gentoo[-test,ruby_targets_ruby23]
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.2.6::gentoo[rdoc]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby22]
+=virtual/rubygems-13 ~amd64
+# required by dev-lang/ruby-2.3.4::gentoo
+# required by dev-ruby/minitest-5.10.1::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.4.1::gentoo
+# required by dev-ruby/rake-12.0.0::gentoo[ruby_targets_ruby24]
+# required by dev-ruby/json-2.0.4::gentoo[-test,ruby_targets_ruby23]
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.2.6::gentoo[rdoc]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby22]
+=dev-ruby/did_you_mean-1.0.2 ~amd64
+# required by dev-ruby/rake-12.0.0::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.4.1::gentoo
+# required by dev-ruby/minitest-5.10.1::gentoo[ruby_targets_ruby24]
+# required by dev-lang/ruby-2.2.6::gentoo
+# required by dev-ruby/json-2.0.4::gentoo[ruby_targets_ruby22]
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.1.9::gentoo[rdoc]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby21]
+=dev-lang/ruby-2.3.4 ~amd64
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby22]
+# required by dev-ruby/minitest-5.10.1::gentoo
+# required by dev-lang/ruby-2.3.4::gentoo
+# required by dev-ruby/rake-12.0.0::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.4.1::gentoo
+# required by dev-ruby/json-2.0.4::gentoo[ruby_targets_ruby24]
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.2.6::gentoo[rdoc]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby22]
+=dev-ruby/rubygems-2.6.11 ~amd64
+# required by dev-lang/ruby-2.4.1::gentoo
+# required by dev-ruby/minitest-5.10.1::gentoo[ruby_targets_ruby24]
+# required by dev-lang/ruby-2.3.4::gentoo
+# required by dev-ruby/rake-12.0.0::gentoo[ruby_targets_ruby23]
+# required by dev-ruby/json-2.0.4::gentoo[-test,ruby_targets_ruby23]
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.2.6::gentoo[rdoc]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby22]
+=dev-ruby/net-telnet-0.1.1-r1 ~amd64
+# required by dev-lang/ruby-2.4.1::gentoo
+# required by dev-ruby/minitest-5.10.1::gentoo[ruby_targets_ruby24]
+# required by dev-lang/ruby-2.3.4::gentoo
+# required by dev-ruby/rake-12.0.0::gentoo[ruby_targets_ruby23]
+# required by dev-ruby/json-2.0.4::gentoo[-test,ruby_targets_ruby23]
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.2.6::gentoo[rdoc]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby22]
+=dev-ruby/xmlrpc-0.3.0 ~amd64
+# required by dev-lang/ruby-2.4.1::gentoo
+# required by dev-ruby/minitest-5.10.1::gentoo[ruby_targets_ruby24]
+# required by dev-lang/ruby-2.3.4::gentoo
+# required by dev-ruby/rake-12.0.0::gentoo[ruby_targets_ruby23]
+# required by dev-ruby/json-2.0.4::gentoo[-test,ruby_targets_ruby23]
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.2.6::gentoo[rdoc]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby22]
+=dev-ruby/did_you_mean-1.1.2 ~amd64
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.3.4::gentoo[rdoc]
+# required by dev-ruby/minitest-5.10.1::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.4.1::gentoo
+# required by dev-ruby/rake-12.0.0::gentoo[ruby_targets_ruby24]
+# required by dev-ruby/json-2.0.4::gentoo[-test,ruby_targets_ruby23]
+# required by dev-lang/ruby-2.2.6::gentoo
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby22]
+=dev-ruby/racc-1.4.14 ~amd64
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.3.4::gentoo[rdoc]
+# required by dev-ruby/minitest-5.10.1::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.4.1::gentoo
+# required by dev-ruby/rake-12.0.0::gentoo[ruby_targets_ruby24]
+# required by dev-ruby/json-2.0.4::gentoo[-test,ruby_targets_ruby23]
+# required by dev-lang/ruby-2.2.6::gentoo
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby22]
+=dev-ruby/kpeg-1.1.0 ~amd64
+# required by dev-ruby/neovim-ruby-client-0.3.2::gentoo[ruby_targets_ruby23]
+# required by app-editors/neovim-0.1.7::gentoo[ruby]
+# required by neovim (argument)
+=dev-ruby/msgpack-1.1.0 ~amd64
+# required by dev-lang/ruby-2.4.1::gentoo
+# required by dev-ruby/minitest-5.10.1::gentoo[ruby_targets_ruby24]
+# required by dev-lang/ruby-2.3.4::gentoo
+# required by dev-ruby/rake-12.0.0::gentoo[ruby_targets_ruby23]
+# required by dev-ruby/json-2.0.4::gentoo[-test,ruby_targets_ruby23]
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.2.6::gentoo[rdoc]
+# required by dev-ruby/msgpack-1.1.0::gentoo[ruby_targets_ruby22]
+# required by dev-ruby/neovim-ruby-client-0.3.2::gentoo[ruby_targets_ruby23]
+# required by app-editors/neovim-0.1.7::gentoo[ruby]
+# required by neovim (argument)
+=dev-ruby/test-unit-3.2.3-r1 ~amd64
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.3.4::gentoo[rdoc]
+# required by dev-ruby/minitest-5.10.1::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.4.1::gentoo
+# required by dev-ruby/rake-12.0.0::gentoo[ruby_targets_ruby24]
+# required by dev-ruby/racc-1.4.14::gentoo[ruby_targets_ruby24,-test]
+=dev-ruby/json-2.0.4 ~amd64
+# required by dev-lang/ruby-2.4.1::gentoo
+# required by dev-ruby/minitest-5.10.1::gentoo[ruby_targets_ruby24]
+# required by dev-lang/ruby-2.3.4::gentoo
+# required by dev-ruby/json-2.0.4::gentoo[ruby_targets_ruby23]
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.2.6::gentoo[rdoc]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby22]
+=dev-ruby/rake-12.0.0 ~amd64
+# required by dev-lang/ruby-2.4.1::gentoo
+# required by dev-ruby/rake-12.0.0::gentoo[ruby_targets_ruby24]
+# required by dev-ruby/json-2.0.4::gentoo[-test,ruby_targets_ruby23]
+# required by dev-lang/ruby-2.3.4::gentoo
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.2.6::gentoo
+# required by dev-ruby/msgpack-1.1.0::gentoo[ruby_targets_ruby22]
+# required by dev-ruby/neovim-ruby-client-0.3.2::gentoo[ruby_targets_ruby23]
+# required by app-editors/neovim-0.1.7::gentoo[ruby]
+# required by neovim (argument)
+=dev-ruby/minitest-5.10.1 ~amd64
