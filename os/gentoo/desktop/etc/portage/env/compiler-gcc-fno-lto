@@ -1,4 +1,4 @@
 CC="gcc"
 CXX="g++"
-CFLAGS="-fno-lto -march=native -O2 -pipe"
+CFLAGS="-fno-lto -march=native -O3 -pipe"
 CXXFLAGS="${CFLAGS}"
