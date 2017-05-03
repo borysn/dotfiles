@@ -286,3 +286,11 @@
 # required by app-editors/neovim-0.1.7::gentoo[ruby]
 # required by neovim (argument)
 =dev-ruby/minitest-5.10.1 ~amd64
+# required by =www-client/firefox-52.1.0-r1 (argument)
+=www-client/firefox-52.1.0-r1 ~amd64
+# required by @selected
+# required by @world (argument)
+=www-client/google-chrome-58.0.3029.81 ~amd64
+# required by @selected
+# required by @world (argument)
+=media-sound/cava-0.4.3 ~amd64
