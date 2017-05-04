@@ -1,0 +1,13 @@
+#!/bin/bash
+
+vgchange -a y gentoovg
+mount /dev/gentoovg/rootlv /mnt/gentoo
+mount /dev/gentoovg/homelv /mnt/gentoo/home
+mount /dev/sda1 /mnt/gentoo/boot
+mount /dev/sda4 /mnt/gentoo/var
+mount /dev/sda5 /mnt/gentoo/tmp
+mount -t proc /proc /mnt/gentoo/proc
+mount --rbind /sys /mnt/gentoo/sys
+mount --make-rslave /mnt/gentoo/sys
+mount --rbind /dev /mnt/gentoo/dev
+mount --make-rslave /mnt/gentoo/dev

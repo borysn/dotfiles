@@ -1,0 +1,4 @@
+#!/bin/bash
+
+umount -l /mnt/gentoo/dev/{shm,pts,}
+umount -Rl /mnt/gentoo
