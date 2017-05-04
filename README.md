@@ -19,6 +19,10 @@ a gentoo desktop rice ([tower & laptop variants](os/gentoo))
 * vim colorscheme: dracula
 * vim-airline theme: behelit
 
+## wiki
+
+* [gentoo install](https://github.com/borysn/dotfiles/wiki/gentoo-install)
+
 ## fonts
 * hack
 * noto
