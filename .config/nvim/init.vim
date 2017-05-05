@@ -6,30 +6,21 @@
 " vim-plug | https://github.com/junegunn/vim-plug "
 """""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.config/nvim/plugged')
-  " vim-lexical
   Plug 'reedes/vim-lexical'
-  " nerdtree | file tree
   Plug 'scrooloose/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
-  " fugitive | git wrapper
   Plug 'tpope/vim-fugitive'
-  " supertab | vim insert mode completions
   Plug 'ervandew/supertab'
-  " youcompleteme | code completion
-  Plug 'valloric/youcompleteme'
-  " syntastic | code syntax checker
+  Plug 'shougo/vimproc'
+  Plug 'shougo/vimshell'
+  Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'}
+  Plug 'mhartington/nvim-typescript'
   Plug 'scrooloose/syntastic'
-  " vim-gitgutter | git status in gutter
   Plug 'airblade/vim-gitgutter'
-  " polyglot language pack
   Plug 'sheerun/vim-polyglot'
-  " tagbar
   Plug 'majutsushi/tagbar'
-  " vim-colorschemes
   Plug 'flazz/vim-colorschemes'
-  " dracula theme
   Plug 'dracula/vim'
-  " vim-airline
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -116,6 +107,14 @@ hi CursorLine cterm=NONE ctermfg=NONE ctermbg=red
 """""""""""""""""
 " plugin config "
 """""""""""""""""
+
+"------------"
+"[deoplete]"
+"------------"
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_debug = 1
+let g:deoplete#enable_profile = 1
+call deoplete#enable_logging('DEBUG', '~/.config/nvim/deoplete.log')
 
 "------------"
 "[vim-lexical]"
