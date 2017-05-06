@@ -83,3 +83,4 @@ x11-base/xorg-server
 x11-misc/xclip
 zsh
 zsh-completions
+nodejs
