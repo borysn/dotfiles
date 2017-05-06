@@ -32,10 +32,19 @@ class bcolors:
 # status
 # status log msg prefixes (with colors)
 class status:
-    ERROR   = bcolors.ERROR   + 'ERROR'   + bcolors.ENDC  
-    WARN    = bcolors.WARN    + 'WARNING' + bcolors.ENDC
-    INFO    = bcolors.OKBLUE  + 'INFO'    + bcolors.ENDC
-    SUCCESS = bcolors.OKGREEN + 'SUCCESS' + bcolors.ENDC
+    ERROR   = '{}ERROR{}'.format(bcolors.ERROR, bcolors.ENDC)
+    WARN    = '{}WARNING{}'.format(bcolors.WARN, bcolors.ENDC)
+    INFO    = '{}INFO{}'.format(bcolors.OKBLUE, bcolors.ENDC)
+    SUCCESS = '{}SUCCESS{}'.format(bcolors.OKGREEN, bcolors.ENDC)
+
+# errorAndExit
+# display error msg and exit
+#
+# @param msg    msg to be displayed
+def errorAndExit(msg):
+    print(sys.exc_info())
+    print('{}: {}'.format(status.ERROR, msg))
+    sys.exit(2)
 
 # parse command line options and arguments
 def parseArgs():
@@ -70,7 +79,7 @@ def argsAreValid(args):
     # no options specified
     if args.list == None and args.itemNum == None:
         # no options specified, arparse didn't parse anything either
-        print(status.ERROR + ': what to do, what to do... try -h')
+        print('{}: what to do, what to do... try -h'.format(status.ERROR))
         # args not valid
         return False
     # itemNum specified
@@ -78,7 +87,7 @@ def argsAreValid(args):
         # check if itemNum is available for removal
         if canRemoveItem(args.itemNum) != True:
             # error
-            print(status.ERROR + ': invalid item number "%s", cannot remove' % args.itemNum)
+            print('{}: invalid item number "{}", cannot remove'.format(status.ERROR, args.itemNum))
             # itemNum not available for removal, arg not valid
             return False
     # all args valid, return True
@@ -92,17 +101,18 @@ def printResumeItems(allItems):
     # print all items
     for name,items in allItems.items():
         # print collection name
-        print('\t[%s]' % name)
+        print('[' + name + ']')
         # check list size
         if items == None or len(items) <= 0:
-            print(status.WARN + ': list is empty')
+            print('\t{}: list is empty'.format(status.WARN))
         else:
-            for i in len(items):
-                print('\t [#%d]' % i + items[i])
+            for i in range(len(items)):
+                print('\t#{}: {}'.format(i, items[i][2]))
 
 # listPortageResumeItems
 # list all ebuilds scheduled in resume & resume_backup
 def listPortageResumeItems():
+    # attempt to get resume and resume_backup from portage mtimedb
     try:
         # get resume items
         resume       = portage.mtimedb.get('resume', {}).get("mergelist")
@@ -111,18 +121,20 @@ def listPortageResumeItems():
         # print resume items
         printResumeItems(items)
         # listing portage resume items was successful
-        print(status.SUCCESS + ': [portage resume items list]')
+        print('\n{}: fetch portage resume/resume_backup lists'.format(status.SUCCESS))
+    #except TypeError as err:
+    #    print(err)
     except:
-        # listing portage resume items was successful
-        print(status.ERROR + ': [cannot list portage resume items]')
-        sys.exit(2)
+        # listing portage resume items was unsuccessful
+        errorAndExit('cannot fetch portage resume list')
+
 
 # removePortageResumeItem
 # remove a portage resume item
 #
 # @param itemNum    valid portage resume item to be removed
 def removePortageResumeItem(itemNum):
-    print(status.SUCCESS + ': [item "%s" removed from portage resume list]' % itemNum)
+    print('{}: item "{}" removed from portage resume list'.format(status.SUCCESS))
 
 # runScript
 # run script as a function of args
