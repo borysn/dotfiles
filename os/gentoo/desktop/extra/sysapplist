@@ -85,3 +85,5 @@ zsh
 zsh-completions
 nodejs
 xautolock
+oracle-jdk-bin
+oracle-jre-bin
