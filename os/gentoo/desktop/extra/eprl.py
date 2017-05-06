@@ -41,6 +41,24 @@ class status:
     INFO    = '{}INFO{}'.format(bcolors.OKBLUE, bcolors.ENDC)
     SUCCESS = '{}SUCCESS{}'.format(bcolors.OKGREEN, bcolors.ENDC)
 
+# dbstore
+# portage mtimedb data store
+class dbstore:
+    def __init__(self, backup):
+        # attempt to get resume and resume_backup from portage mtimedb
+        try:
+            # get resume items
+            self.target     = 'resume_backup' if backup else 'resume'
+            self.resumeList = portage.mtimedb.get(self.target, {}).get('mergelist')
+        except:
+            # listing portage resume items was unsuccessful
+            errorAndExit('cannot fetch portage resume list')
+
+    def getResumeList(self): 
+        return self.resumeList
+    def getTarget(self): 
+        return self.target
+
 # errorAndExit
 # display error msg and exit
 #
@@ -66,12 +84,17 @@ def parseArgs():
     # parse arguments and return
     return parser.parse_args()
 
-# canRemoveItem
-# validate if an item can be removed from the resume point
+# cantRemoveItem
+# validate if an item cant be removed from the resume point
 #
-# @param itemNum    valid portage resume item for removal
-# @return           True if item can be removed, False otherwise
-def cantRemoveItem(itemNum):
+# @param itemNum    portage resume item number for removal
+# @return           True if item cant be removed, False otherwise
+def cantRemoveItem(itemNum, db):
+    # get current resume list
+    resumeList = db.getResumeList();
+    # check if itemNum is in range
+    if itemNum in range(len(resumeList)):
+        return False
     return True
 
 # argsAreValid
@@ -81,75 +104,65 @@ def cantRemoveItem(itemNum):
 #
 # @param args      
 # @return        True if args are valid, False otherwise
-def argsAreValid(args): 
+def argsAreNotValid(args, db): 
     # no options specified
     if args.list == False and args.itemNum == None:
         # no options specified, arparse didn't parse anything either
-        print('{}: what to do, what to do... try -h'.format(status.ERROR))
         # args not valid
-        return False
+        return True
     # itemNum specified
     elif args.itemNum != None:
         # check if itemNum is available for removal
-        if cantRemoveItem(args.itemNum):
+        if cantRemoveItem(args.itemNum, db):
             # error
             print('{}: invalid item number "{}", cannot remove'.format(status.ERROR, args.itemNum))
             # itemNum not available for removal, arg not valid
-            return False
-    # all args valid, return True
-    return True
+            return True
+    # all args valid, return False
+    return False
 
 # printResumeItems
 # output resume item list to console
 #
 # @params items    dictionary containing 'resume' & 'resume_backup' matrices
-def printResumeItems(items, target):
+def printResumeList(resumeList, target):
      # print collection name
      print('[{} list]'.format(tcolor.CTXT(tcolor.PURPLE, target)))
      # check list size
-     if items == None or len(items) <= 0:
+     if resumeList == None or len(resumeList) <= 0:
          print('\t{}: list is empty'.format(status.WARN))
      else:
-         for i in range(len(items)):
-             print('\t{}: {}'.format(tcolor.CTXT(tcolor.BLUE, i), items[i][2]))
+         for i in range(len(resumeList)):
+             print('\t{}: {}'.format(tcolor.CTXT(tcolor.BLUE, i), resumeList[i][2]))
 
 # listPortageResumeItems
 # list all ebuilds scheduled in resume & resume_backup
-def listPortageResumeItems(backup):
-    # attempt to get resume and resume_backup from portage mtimedb
-    try:
-        # get resume items
-        target = 'resume_backup' if backup else 'resume'
-        items  = portage.mtimedb.get(target, {}).get('mergelist')
+#
+# @param db    mtimedb data store
+def listPortageResumeItems(db):
         # print resume items
-        printResumeItems(items, target)
+        printResumeList(db.getResumeList(), db.getTarget())
         # listing portage resume items was successful
         print('\n{}: fetch portage resume/resume_backup lists'.format(status.SUCCESS))
-    #except TypeError as err:
-    #    print(err)
-    except:
-        # listing portage resume items was unsuccessful
-        errorAndExit('cannot fetch portage resume list')
-
 
 # removePortageResumeItem
 # remove a portage resume item
 #
 # @param itemNum    valid portage resume item to be removed
-def removePortageResumeItem(itemNum):
+def removePortageResumeItem(itemNum, db):
     print('{}: item "{}" removed from portage resume list'.format(status.SUCCESS))
 
 # runScript
 # run script as a function of args
 #
 # @param args       args should be validated before passed in
-def runScript(args):
+def runScript(args, db):
     # list all portage emerge items
     if args.list == True:
-        listPortageResumeItems(args.backup)
+        listPortageResumeItems(db)
     # remove portage resume item(s)
     elif args.itemNum != None:
-        removePortageResumeItem(args.itemNum)
+        removePortageResumeItem(db)
 
 # main
 # parse & validate args, run script
@@ -157,12 +170,15 @@ def main():
     # get args
     args = parseArgs()
 
+    # init db store for portage mtimedb
+    db = dbstore(args.backup)
+    
     # validate args, exit if invalid
-    if argsAreValid(args) == False:
-        sys.exit(2)
+    if argsAreNotValid(args, db):
+        errorAndExit('what to do, what to do...try {}'.format(tcolor.CTXT(tcolor.BLUE, '-h')))
         
     # execute script
-    runScript(args)
+    runScript(args, db)
 
     # exit succes
     sys.exit(0)
