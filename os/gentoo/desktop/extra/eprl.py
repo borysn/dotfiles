@@ -29,9 +29,8 @@ class tcolor:
     GREEN   = bcolors.OKGREEN
     YELLOW  = bcolors.WARN
     RED     = bcolors.ERROR
-    
     CTXT    = lambda c, m: '{}{}{}'.format(c, m, bcolors.ENDC)
-    
+
 # status
 # status log msg prefixes (with colors)
 class status:
@@ -186,7 +185,7 @@ def parseArgs():
 #
 # note: argparse will handle most of the args error checking
 #
-# @param args      
+# @param args    script arguments
 # @return        True if args are valid, False otherwise
 def argsAreNotValid(args, db): 
     # no options specified
@@ -199,7 +198,7 @@ def argsAreNotValid(args, db):
         # check if itemNum is available for removal
         if cantRemoveItem(args.itemNum, db):
             # error
-            print('{}: invalid item number "{}", cannot remove from'.format(status.ERROR, args.itemNum))
+            print('{}: invalid item number "{}", cannot remove'.format(status.ERROR, args.itemNum))
             # itemNum not available for removal, arg not valid
             return True
     # all args valid, return False
@@ -213,11 +212,11 @@ def main():
 
     # init db store for portage mtimedb
     db = dbstore(args.backup)
-    
+
     # validate args, exit if invalid
     if argsAreNotValid(args, db):
         errorAndExit('what to do, what to do...try {}'.format(tcolor.CTXT(tcolor.BLUE, '-h')))
-        
+
     # execute script
     runScript(args, db)
 
