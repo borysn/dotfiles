@@ -77,7 +77,7 @@ def canRemoveItem(itemNum):
 # @return        True if args are valid, False otherwise
 def argsAreValid(args): 
     # no options specified
-    if args.list == None and args.itemNum == None:
+    if args.list == False and args.itemNum == None:
         # no options specified, arparse didn't parse anything either
         print('{}: what to do, what to do... try -h'.format(status.ERROR))
         # args not valid
