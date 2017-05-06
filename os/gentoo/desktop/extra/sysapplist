@@ -15,6 +15,7 @@ clamav
 compton
 cronie
 dbus
+dev-python/pip
 dev-vcs/git
 dhcpcd
 dnsmasq
@@ -24,7 +25,7 @@ eix
 elinks
 elogv
 euses
-firefox
+=firefox-52.1.0-r1
 firewalld
 genkernel-next
 genlop
@@ -69,6 +70,8 @@ syslog-ng
 tlsdate
 tmux
 urxvt-perls
+virtualbox
+virtualbox-extpack-oracle
 vnstat
 w3m
 wavemon
