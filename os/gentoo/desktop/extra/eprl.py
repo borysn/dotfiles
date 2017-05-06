@@ -21,13 +21,17 @@ class bcolors:
     ERROR   = '\033[91m'
     ENDC    = '\033[0m'
 
-    def disable(self):
-        self.HEADER  = ''
-        self.OKBLUE  = ''
-        self.OKGREEN = ''
-        self.WARN    = ''
-        self.ERROR   = ''
-        self.ENDC    = ''
+# tcolor
+# colorify some text
+class tcolor:
+    PURPLE  = bcolors.HEADER
+    BLUE    = bcolors.OKBLUE
+    GREEN   = bcolors.OKGREEN
+    YELLOW  = bcolors.WARN
+    RED     = bcolors.ERROR
+    
+    CTXT    = lambda c, m: '{}{}{}'.format(c, m, bcolors.ENDC)
+    
 
 # status
 # status log msg prefixes (with colors)
@@ -53,7 +57,9 @@ def parseArgs():
     # list portage resume items
     parser.add_argument('-l', '--list', action='store_true', help='list portage resume items')
     # remove portage resume item(s)
-    parser.add_argument('-r', '--remove', action='store', dest='itemNum', type=int, help='remove portage resume item') 
+    parser.add_argument('-r', '--remove', action='store', dest='itemNum', type=int, help='remove portage resume items') 
+    # which list to remove from
+    parser.add_argument('-b', '--backup', action='store_true', help='specify list or removal from backup list')
     # version
     parser.add_argument('-v', '--version', action='version', version='%(prog)s 0.1')
 
@@ -65,7 +71,7 @@ def parseArgs():
 #
 # @param itemNum    valid portage resume item for removal
 # @return           True if item can be removed, False otherwise
-def canRemoveItem(itemNum):
+def cantRemoveItem(itemNum):
     return True
 
 # argsAreValid
@@ -85,7 +91,7 @@ def argsAreValid(args):
     # itemNum specified
     elif args.itemNum != None:
         # check if itemNum is available for removal
-        if canRemoveItem(args.itemNum) != True:
+        if cantRemoveItem(args.itemNum):
             # error
             print('{}: invalid item number "{}", cannot remove'.format(status.ERROR, args.itemNum))
             # itemNum not available for removal, arg not valid
@@ -97,29 +103,26 @@ def argsAreValid(args):
 # output resume item list to console
 #
 # @params items    dictionary containing 'resume' & 'resume_backup' matrices
-def printResumeItems(allItems):
-    # print all items
-    for name,items in allItems.items():
-        # print collection name
-        print('[' + name + ']')
-        # check list size
-        if items == None or len(items) <= 0:
-            print('\t{}: list is empty'.format(status.WARN))
-        else:
-            for i in range(len(items)):
-                print('\t#{}: {}'.format(i, items[i][2]))
+def printResumeItems(items, target):
+     # print collection name
+     print('[{} list]'.format(tcolor.CTXT(tcolor.PURPLE, target)))
+     # check list size
+     if items == None or len(items) <= 0:
+         print('\t{}: list is empty'.format(status.WARN))
+     else:
+         for i in range(len(items)):
+             print('\t{}: {}'.format(tcolor.CTXT(tcolor.BLUE, i), items[i][2]))
 
 # listPortageResumeItems
 # list all ebuilds scheduled in resume & resume_backup
-def listPortageResumeItems():
+def listPortageResumeItems(backup):
     # attempt to get resume and resume_backup from portage mtimedb
     try:
         # get resume items
-        resume       = portage.mtimedb.get('resume', {}).get("mergelist")
-        resumeBackup = portage.mtimedb.get('resume_backup', {}).get("mergelist")
-        items = {'resume': resume, 'resume_backup': resumeBackup}
+        target = 'resume_backup' if backup else 'resume'
+        items  = portage.mtimedb.get(target, {}).get('mergelist')
         # print resume items
-        printResumeItems(items)
+        printResumeItems(items, target)
         # listing portage resume items was successful
         print('\n{}: fetch portage resume/resume_backup lists'.format(status.SUCCESS))
     #except TypeError as err:
@@ -143,9 +146,9 @@ def removePortageResumeItem(itemNum):
 def runScript(args):
     # list all portage emerge items
     if args.list == True:
-        listPortageResumeItems()
+        listPortageResumeItems(args.backup)
     # remove portage resume item(s)
-    if args.itemNum != None:
+    elif args.itemNum != None:
         removePortageResumeItem(args.itemNum)
 
 # main
