@@ -95,7 +95,7 @@ def cantRemoveItem(itemNum, db):
     # get current resume list
     resumeList = db.getResumeList();
     # check if itemNum is in range
-    if itemNum in range(len(resumeList)):
+    if resumeList != None and itemNum in range(len(resumeList)):
         return False
     return True
 
@@ -123,14 +123,35 @@ def listPortageResumeItems(db):
         # listing portage resume items was successful
         print('\n{}: fetch portage resume/resume_backup lists'.format(status.SUCCESS))
 
+# confirmDelete
+# have user confirm the removal of an item
+#
+# @param itemNum    item to be deleted
+# @param db         portage mtimedb data store
+def confirmDelete(itemNum, db):
+    # init return
+    confirmed = False
+    msg = '{}: {}'.format(status.WARN, 'are you sure? (y/n) ')
+    while True:
+        answer = input(msg)
+        answer = answer.upper()
+        if answer == 'Y':
+            confirmed = True
+            break;
+        elif answer == 'N':
+            break;
+    return confirmed
+
 # removePortageResumeItem
 # remove a portage resume item
 #
 # @param itemNum    valid portage resume item to be removed
 def removePortageResumeItem(itemNum, db):
-    # attempt to remove resume item
-    db.removeItem(itemNum)
-    print('{}: item "{}" removed from portage resume list'.format(status.SUCCESS, tcolor.CTXT(tcolor.PURPLE, itemNum)))
+    # confirm delete
+    if confirmDelete(itemNum, db):
+        # attempt to remove resume item
+        db.removeItem(itemNum)
+        print('{}: item "{}" removed from portage resume list'.format(status.SUCCESS, tcolor.CTXT(tcolor.PURPLE, itemNum)))
 
 # runScript
 # run script as a function of args
@@ -178,7 +199,7 @@ def argsAreNotValid(args, db):
         # check if itemNum is available for removal
         if cantRemoveItem(args.itemNum, db):
             # error
-            print('{}: invalid item number "{}", cannot remove'.format(status.ERROR, args.itemNum))
+            print('{}: invalid item number "{}", cannot remove from'.format(status.ERROR, args.itemNum))
             # itemNum not available for removal, arg not valid
             return True
     # all args valid, return False
