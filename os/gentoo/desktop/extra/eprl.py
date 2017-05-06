@@ -8,7 +8,7 @@
 # edit portage resume list
 #
 
-import portage, sys, argparse
+import portage, sys, argparse, pickle
 
 # ANSI color codes
 # thank you, lliam-mcinroy
@@ -32,7 +32,6 @@ class tcolor:
     
     CTXT    = lambda c, m: '{}{}{}'.format(c, m, bcolors.ENDC)
     
-
 # status
 # status log msg prefixes (with colors)
 class status:
@@ -45,44 +44,47 @@ class status:
 # portage mtimedb data store
 class dbstore:
     def __init__(self, backup):
+        # get resume items
+        self.target     = 'resume_backup' if backup else 'resume'
         # attempt to get resume and resume_backup from portage mtimedb
         try:
-            # get resume items
-            self.target     = 'resume_backup' if backup else 'resume'
             self.resumeList = portage.mtimedb.get(self.target, {}).get('mergelist')
         except:
             # listing portage resume items was unsuccessful
             errorAndExit('cannot fetch portage resume list')
 
+    #  return resume list
     def getResumeList(self): 
         return self.resumeList
+    # get target 'resume' || 'resume_backup' if -b flag is set
     def getTarget(self): 
         return self.target
+    # remove item from resume list by item number
+    def removeItem(self, itemNum):
+        try:
+            # store portage mtimedb in memory
+            data = portage.mtimedb
+            # log
+            print('{}: attempting to remove {}'.format(status.INFO, tcolor.CTXT(tcolor.PURPLE, data[self.target]['mergelist'][itemNum][2])))
+            # delete specified entry
+            del data[self.target]['mergelist'][itemNum]
+            # attempt tow rite changes to disk
+            f = open(portage.mtimedbfile, 'wb')
+            pickle.dump(data, f)
+            f.close()
+        except:
+            errorAndExit('could not save changes to portate mtimedb')
 
 # errorAndExit
 # display error msg and exit
 #
 # @param msg    msg to be displayed
 def errorAndExit(msg):
-    print(sys.exc_info())
+    excInfo = sys.exc_info()
+    if excInfo[0] != None:
+        print(sys.exc_info())
     print('{}: {}'.format(status.ERROR, msg))
     sys.exit(2)
-
-# parse command line options and arguments
-def parseArgs():
-    # get argument parser
-    parser = argparse.ArgumentParser()
-    # list portage resume items
-    parser.add_argument('-l', '--list', action='store_true', help='list portage resume items')
-    # remove portage resume item(s)
-    parser.add_argument('-r', '--remove', action='store', dest='itemNum', type=int, help='remove portage resume items') 
-    # which list to remove from
-    parser.add_argument('-b', '--backup', action='store_true', help='specify list or removal from backup list')
-    # version
-    parser.add_argument('-v', '--version', action='version', version='%(prog)s 0.1')
-
-    # parse arguments and return
-    return parser.parse_args()
 
 # cantRemoveItem
 # validate if an item cant be removed from the resume point
@@ -96,30 +98,6 @@ def cantRemoveItem(itemNum, db):
     if itemNum in range(len(resumeList)):
         return False
     return True
-
-# argsAreValid
-# validate commandline options and arguments
-#
-# note: argparse will handle most of the args error checking
-#
-# @param args      
-# @return        True if args are valid, False otherwise
-def argsAreNotValid(args, db): 
-    # no options specified
-    if args.list == False and args.itemNum == None:
-        # no options specified, arparse didn't parse anything either
-        # args not valid
-        return True
-    # itemNum specified
-    elif args.itemNum != None:
-        # check if itemNum is available for removal
-        if cantRemoveItem(args.itemNum, db):
-            # error
-            print('{}: invalid item number "{}", cannot remove'.format(status.ERROR, args.itemNum))
-            # itemNum not available for removal, arg not valid
-            return True
-    # all args valid, return False
-    return False
 
 # printResumeItems
 # output resume item list to console
@@ -150,7 +128,9 @@ def listPortageResumeItems(db):
 #
 # @param itemNum    valid portage resume item to be removed
 def removePortageResumeItem(itemNum, db):
-    print('{}: item "{}" removed from portage resume list'.format(status.SUCCESS))
+    # attempt to remove resume item
+    db.removeItem(itemNum)
+    print('{}: item "{}" removed from portage resume list'.format(status.SUCCESS, tcolor.CTXT(tcolor.PURPLE, itemNum)))
 
 # runScript
 # run script as a function of args
@@ -162,7 +142,47 @@ def runScript(args, db):
         listPortageResumeItems(db)
     # remove portage resume item(s)
     elif args.itemNum != None:
-        removePortageResumeItem(db)
+        removePortageResumeItem(args.itemNum, db)
+
+# parse command line options and arguments
+def parseArgs():
+    # get argument parser
+    parser = argparse.ArgumentParser()
+    # list portage resume items
+    parser.add_argument('-l', '--list', action='store_true', help='list portage resume items')
+    # remove portage resume item(s)
+    parser.add_argument('-r', '--remove', action='store', dest='itemNum', type=int, help='remove portage resume items') 
+    # which list to remove from
+    parser.add_argument('-b', '--backup', action='store_true', help='specify list or removal from backup list')
+    # version
+    parser.add_argument('-v', '--version', action='version', version='%(prog)s 0.1')
+
+    # parse arguments and return
+    return parser.parse_args()
+
+# argsAreValid
+# validate commandline options and arguments
+#
+# note: argparse will handle most of the args error checking
+#
+# @param args      
+# @return        True if args are valid, False otherwise
+def argsAreNotValid(args, db): 
+    # no options specified
+    if args.list == False and args.itemNum == None:
+        # no options specified, arparse didn't parse anything either
+        # args not valid
+        return True
+    # itemNum specified
+    elif args.itemNum != None:
+        # check if itemNum is available for removal
+        if cantRemoveItem(args.itemNum, db):
+            # error
+            print('{}: invalid item number "{}", cannot remove'.format(status.ERROR, args.itemNum))
+            # itemNum not available for removal, arg not valid
+            return True
+    # all args valid, return False
+    return False
 
 # main
 # parse & validate args, run script
