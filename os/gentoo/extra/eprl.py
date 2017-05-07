@@ -53,7 +53,7 @@ class dbstore:
         self.target     = 'resume_backup' if backup else 'resume'
         # attempt to get resume and resume_backup from portage mtimedb
         try:
-            self.resumeList = portage.mtimedb.get(self.target, {}).get('mergelist')
+            self.resumeList = portage.mtimedb[self.target]['mergelist']
         except:
             # listing portage resume items was unsuccessful
             errorAndExit('cannot fetch portage resume list')
