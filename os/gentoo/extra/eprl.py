@@ -1,5 +1,4 @@
 #!/bin/env python3
-
 #
 # eprl.py
 # author: borysn | oxenfree
@@ -8,9 +7,13 @@
 # edit portage resume list
 #
 # usage: eprl.py [-h] [-l] [-r ITEMNUM] [-b] [-v]
-
+#
 import os, sys, argparse, pickle
 
+# catch portage python module import error
+# probably a result of not running as root
+# continue script and attempt to error out
+# at root privilege check
 try:
     import portage
 except ImportError:
