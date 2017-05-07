@@ -27,9 +27,9 @@ a gentoo desktop rice ([tower & laptop variants](os/gentoo))
 * hack
 * noto
 * symbola
-* [ionicons](/os/gentoo/desktop/usr/share/fonts/ionicons)
+* [ionicons](.local/share/fonts/ionicons)
 * fontawesome
-* [siji](/os/gentoo/desktop/usr/share/fonts/siji)
+* [siji](.local/share/fonts/siji)
 
 ## applications
 * i3-gaps
