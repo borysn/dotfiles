@@ -7,8 +7,14 @@
 #
 # edit portage resume list
 #
+# usage: eprl.py [-h] [-l] [-r ITEMNUM] [-b] [-v]
 
-import portage, sys, argparse, pickle
+import os, sys, argparse, pickle
+
+try:
+    import portage
+except ImportError:
+    print('hmm, can\'t find portage python module, that\'s not good...')
 
 # ANSI color codes
 # thank you, lliam-mcinroy
@@ -204,9 +210,19 @@ def argsAreNotValid(args, db):
     # all args valid, return False
     return False
 
+# userDoesNotHaveRootPrivileges
+# check if user does not have root privileges
+#
+# @return    true if user does not have root privileges, false otherwise
+def userDoesNotHaveRootPrivileges(): return True if os.getuid() != 0 else False
+
 # main
-# parse & validate args, run script
+# root privilege check, parse & validate args, get mtimedb store, run script
 def main():
+    # check for correct privileges
+    if userDoesNotHaveRootPrivileges():
+        errorAndExit('eprl.py requires root privileges, try running with sudo')
+
     # get args
     args = parseArgs()
 
