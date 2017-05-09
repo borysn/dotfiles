@@ -8,7 +8,7 @@
 #
 # usage: eprl.py [-h] [-l] [-r ITEMNUM] [-b] [-v]
 #
-import os, sys, argparse, pickle
+import os, sys, argparse
 
 # catch portage python module import error
 # probably a result of not running as root
@@ -16,6 +16,7 @@ import os, sys, argparse, pickle
 # at root privilege check
 try:
     import portage
+    from portage.util.mtimedb import MtimeDB
 except ImportError:
     print('hmm, can\'t find portage python module, that\'s not good...')
 
@@ -51,10 +52,12 @@ class status:
 # dbstore
 # portage mtimedb data store
 class dbstore:
+    # constructor
     def __init__(self, backup):
         # get resume items
         self.target     = 'resume_backup' if backup else 'resume'
-        # attempt to get resume and resume_backup from portage mtimedb
+        # attempt to get portage mtimedb
+        self.db = MtimeDB(portage.mtimedbfile)
         try:
             self.resumeList = portage.mtimedb[self.target]['mergelist']
         except:
@@ -64,24 +67,40 @@ class dbstore:
     #  return resume list
     def getResumeList(self): 
         return self.resumeList
+
     # get target 'resume' || 'resume_backup' if -b flag is set
-    def getTarget(self): 
+    def getTarget(self):
         return self.target
-    # remove item from resume list by item number
-    def removeItem(self, itemNum):
+
+    # add item to resume list
+    def addItems(self, items):
         try:
-            # store portage mtimedb in memory
-            data = portage.mtimedb
-            # log
-            print('{}: attempting to remove {}'.format(status.INFO, tcolor.CTXT(tcolor.PURPLE, data[self.target]['mergelist'][itemNum][2])))
-            # delete specified entry
-            del data[self.target]['mergelist'][itemNum]
-            # attempt tow rite changes to disk
-            f = open(portage.mtimedbfile, 'wb')
-            pickle.dump(data, f)
-            f.close()
+            for item in items:
+                # log
+                print('{}: attempting to add {}'.format(status.INFO, tcolor.CTXT(tcolor.PURPLE, item)))
+                # create item entry
+                entry = ['ebuild', '/', '{}'.format(item), 'merge']
+                # add item to dict loaded in memory
+                self.db[self.target]['mergelist'].append(entry)
+            # write changes to disk
+            self.db.commit()
         except:
-            errorAndExit('could not save changes to portate mtimedb')
+            errorAndExit('could not add items to portage mtimedb')
+
+    # remove item from resume list by item number
+    def removeItems(self, itemNums):
+        for item in self.db[self.target]['mergelist']:
+            print('\t{}'.format(item))
+        try:
+            for itemNum in itemNums:
+                # log
+                print('{}: attempting to remove {}'.format(status.INFO, tcolor.CTXT(tcolor.PURPLE, self.db[self.target]['mergelist'][itemNum][2])))
+                # delete specified entry
+                del self.db[self.target]['mergelist'][itemNum]
+            # write changes to disk
+            self.db.commit()
+        except:
+            errorAndExit('could not remove item portage mtimedb')
 
 # errorAndExit
 # display error msg and exit
@@ -112,14 +131,15 @@ def cantRemoveItem(itemNum, db):
 #
 # @params items    dictionary containing 'resume' & 'resume_backup' matrices
 def printResumeList(resumeList, target):
-     # print collection name
-     print('[{} list]'.format(tcolor.CTXT(tcolor.PURPLE, target)))
-     # check list size
-     if resumeList == None or len(resumeList) <= 0:
-         print('\t{}: list is empty'.format(status.WARN))
-     else:
-         for i in range(len(resumeList)):
-             print('\t{}: {}'.format(tcolor.CTXT(tcolor.BLUE, i), resumeList[i][2]))
+    print('\n{}\n'.format(resumeList))
+    # print collection name
+    print('[{} list]'.format(tcolor.CTXT(tcolor.PURPLE, target)))
+    # check list size
+    if resumeList == None or len(resumeList) <= 0:
+        print('\t{}: list is empty'.format(status.WARN))
+    else:
+        for i in range(len(resumeList)):
+            print('\t{}: {}'.format(tcolor.CTXT(tcolor.BLUE, i), resumeList[i][2]))
 
 # listPortageResumeItems
 # list all ebuilds scheduled in resume & resume_backup
@@ -136,7 +156,7 @@ def listPortageResumeItems(db):
 #
 # @param itemNum    item to be deleted
 # @param db         portage mtimedb data store
-def confirmDelete(itemNum, db):
+def confirmDelete(itemNums, db):
     # init return
     confirmed = False
     msg = '{}: {}'.format(status.WARN, 'are you sure? (y/n) ')
@@ -154,12 +174,21 @@ def confirmDelete(itemNum, db):
 # remove a portage resume item
 #
 # @param itemNum    valid portage resume item to be removed
-def removePortageResumeItem(itemNum, db):
+def removePortageResumeItems(itemNums, db):
     # confirm delete
-    if confirmDelete(itemNum, db):
+    if confirmDelete(itemNums, db):
         # attempt to remove resume item
-        db.removeItem(itemNum)
-        print('{}: item "{}" removed from portage resume list'.format(status.SUCCESS, tcolor.CTXT(tcolor.PURPLE, itemNum)))
+        db.removeItems(itemNums)
+        print('{}: item "{}" removed from portage resume list'.format(status.SUCCESS, tcolor.CTXT(tcolor.PURPLE, itemNums)))
+
+# addPortageResumeItems
+# add item(s) to a portage resume list
+#
+# @param  items    list of possible item entries, just portage package names
+# @param  db       portage mtimedb data store
+def addPortageResumeItems(items, db):
+    db.addItems(items)
+    print('{}: item(s)\n{}\nadded to portage resume list'.format(status.SUCCESS, tcolor.CTXT(tcolor.PURPLE, items)))
 
 # runScript
 # run script as a function of args
@@ -170,8 +199,11 @@ def runScript(args, db):
     if args.list == True:
         listPortageResumeItems(db)
     # remove portage resume item(s)
-    elif args.itemNum != None:
-        removePortageResumeItem(args.itemNum, db)
+    elif args.itemNums != None:
+        removePortageResumeItems(args.itemNums, db)
+    # add portage resume item(s)
+    elif args.items != None:
+        addPortageResumeItems(args.items, db)
 
 # parse command line options and arguments
 def parseArgs():
@@ -180,7 +212,9 @@ def parseArgs():
     # list portage resume items
     parser.add_argument('-l', '--list', action='store_true', help='list portage resume items')
     # remove portage resume item(s)
-    parser.add_argument('-r', '--remove', action='store', dest='itemNum', type=int, help='remove portage resume items') 
+    parser.add_argument('-r', '--remove', action='store', dest='itemNums', type=int, nargs="+", help='remove portage resume items') 
+    # add portage resume item(s)
+    parser.add_argument('-a', '--add', action='store', dest='items', type=str, nargs='+', help='add resume item(s) to a resume list')
     # which list to remove from
     parser.add_argument('-b', '--backup', action='store_true', help='specify list or removal from backup list')
     # version
@@ -196,22 +230,48 @@ def parseArgs():
 #
 # @param args    script arguments
 # @return        True if args are valid, False otherwise
-def argsAreNotValid(args, db): 
+def argsAreNotValid(args, db):
+    # init return
+    argsAreNotValid = False
     # no options specified
-    if args.list == False and args.itemNum == None:
+    if args.list == False and args.itemNums == None and args.items == None:
         # no options specified, arparse didn't parse anything either
         # args not valid
-        return True
+        argsAreNotValid = True
     # itemNum specified
-    elif args.itemNum != None:
-        # check if itemNum is available for removal
-        if cantRemoveItem(args.itemNum, db):
-            # error
-            print('{}: invalid item number "{}", cannot remove'.format(status.ERROR, args.itemNum))
-            # itemNum not available for removal, arg not valid
-            return True
-    # all args valid, return False
-    return False
+    elif args.itemNums != None:
+        # iterate item numbers
+        for itemNum in args.itemNums:
+            # check if itemNum is available for removal
+            if cantRemoveItem(itemNum, db):
+                # error
+                print('{}: invalid item number "{}", cannot remove'.format(status.ERROR, itemNum))
+                # itemNum not available for removal, arg not valid
+                argsAreNotValid = True
+                break
+    # items specified
+    elif args.items != None:
+        # iterate items
+        for item in args.items:
+            try:
+                # find any matches for a given item
+                matches = portage.dbapi.porttree.portdbapi().match(item)
+                # no matches
+                if len(matches) == 0:
+                    # error
+                    print('{}: invalid dependency "{}", cannot add to resume list'.format(status.ERROR, item))
+                    # cannot match this item, arg not valid
+                    argsAreNotValid = True
+                    break
+                # one or more matches
+                elif len(matches) >=:
+
+            except portage.exception.AmbiguousPackageName:
+                errorAndExit('can\'t validate a package name because it\'s ambiguous, try being more specific\n\ti.e. \'dev-lisp/asdf\' vs. \'asdf\'')
+            except:
+                errorAndExit('something went wrong when attempting to validate your listed dependencies')
+    # return result
+    return argsAreNotValid
 
 # userDoesNotHaveRootPrivileges
 # check if user does not have root privileges
