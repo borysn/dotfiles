@@ -144,6 +144,13 @@ fi
 
 if [ -f ~/.alert ]; then echo '>>> check ~/.alert'; fi
 
+#########
+# other #
+#########
+
+# vim ternjs
+ulimit -n 2048
+
 ##########
 # sdkman #
 ##########
