@@ -88,3 +88,6 @@ xautolock
 oracle-jdk-bin
 oracle-jre-bin
 pandoc
+dev-python/virtualenv
+gdb
+strace
