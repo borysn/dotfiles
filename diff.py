@@ -6,10 +6,11 @@
 # diff system files and dotfiles and display any discrepancies
 #
 # TODO
-#     only diff textfiles, check other files for just missing
-#     create legend
-#         i.e. m == missing, d == different, w/e
-#
+#     1. only diff textfiles, check other files for just missing
+#     2. create legend
+#            i.e. m == missing, d == different, w/e
+#     3. some diffs on sh files or conf files end up not empty, how come?
+#             should i move to calling diff from shell, and storing results?
 import os, sys, difflib
 
 # tcolor
