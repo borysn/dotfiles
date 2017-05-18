@@ -18,6 +18,7 @@ ignoreList = [
     '.gitattributes',
     'README.md',
     'diff.py',
+    'extra',
     '__pycache__',
     'os/arch',
     laptop if not laptopDiff else desktop
@@ -84,20 +85,22 @@ def diff(sysfiles, dotfiles):
     results = {}
     # iterate files
     for i in range(len(sysfiles)):
+        print('{}:{}'.format(sysfiles[i], dotfiles[i]))
         try:
             # TODO check file r ok
             # open files for reading
-            f1 = open(sysfiles[i], 'r')
-            f2 = open(dotfiles[i], 'r')
+            f1 = open(sysfiles[i], 'r', errors='replace')
+            f2 = open(dotfiles[i], 'r', errors='replace')
             # diff files
             diff = difflib.ndiff(f1.readlines(), f2.readlines())
             # store results
-            result = map(os.path.basename(f1.name), [f1, f2, list(diff)])
-            results.append(result)
+            results[os.path.basename(f1.name)] = [f1, f2, diff]
             # close files
             f1.close()
             f2.close()
-        except:
+        except Exception as err:
+            print(err)
+            sys.exit(2)
             pass
     # return diff
     return results
