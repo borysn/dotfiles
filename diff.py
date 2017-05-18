@@ -119,10 +119,7 @@ def getDiffResults():
 def main():
     # get diff results
     diffResults = getDiffResults()
-    print(diffResults)
-    print(list(diffResults))
-    for d in diffResults:
-        print(d)
+    # script completed successfully
     sys.exit(0)
 
 # check for main and run script
