@@ -115,10 +115,14 @@ def getDiffResults():
     # return diff results
     return diff(sysfiles, dotfiles)
 
+# printDiffResults
+def printDiffResults(diffResults):
+    print(diffResults)
+
 # main
 def main():
     # get diff results
-    diffResults = getDiffResults()
+    printDiffResults(getDiffResults())
     # script completed successfully
     sys.exit(0)
 
