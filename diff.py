@@ -2,11 +2,17 @@
 # diff.py
 # author: borysn
 # license: what's a license?
-import os
+#
+# diff system files and dotfiles and display any discrepancies
+import os, sys, difflib
 
 # TODO args
-laptop = False
+currOS = 'os/gentoo'
+laptop = '{}/{}'.format(currOS, 'laptop')
+desktop = '{}/{}'.format(currOS, 'desktop')
+laptopDiff = False
 fcwd = lambda x: '{}/{}'.format(os.getcwd(), x)
+target = desktop if not laptopDiff else laptop
 ignoreList = [
     '.git',
     '.gitattributes',
@@ -14,7 +20,7 @@ ignoreList = [
     'diff.py',
     '__pycache__',
     'os/arch',
-    'os/laptop' if not laptop else 'os/desktop'
+    laptop if not laptopDiff else desktop
 ]
 
 # isIgnoredFileOrDir
@@ -55,17 +61,65 @@ def getDotfiles():
 
 # getSysfiles
 def getSysfiles(dotfiles):
-    return []
+    # init return
+    sysfiles = []
+    # traverse dotfiles
+    for f in dotfiles:
+        # check for file outside of user space
+        if target in f:
+            # truncate everything (upto and including) the target string
+            file = f[len(os.getcwd()) + len(target) + 1:]
+            sysfiles.append(file)
+        else:
+            # user space file
+            file = '{}{}'.format(os.environ['HOME'], f[len(os.getcwd())+1:])
+            sysfiles.append(file)
 
-# diffResults
-def diffResults():
+    # return result
+    return sysfiles
+
+# diff
+def diff(sysfiles, dotfiles):
+    # init diff
+    results = {}
+    # iterate files
+    for i in range(len(sysfiles)):
+        try:
+            # TODO check file r ok
+            # open files for reading
+            f1 = open(sysfiles[i], 'r')
+            f2 = open(dotfiles[i], 'r')
+            # diff files
+            diff = difflib.ndiff(f1.readlines(), f2.readlines())
+            # store results
+            result = map(os.path.basename(f1.name), [f1, f2, list(diff)])
+            results.append(result)
+            # close files
+            f1.close()
+            f2.close()
+        except:
+            pass
+    # return diff
+    return results
+
+# getDiffResults
+def getDiffResults():
+    # get dotfiles (repo)
     dotfiles = getDotfiles()
+    # get files on system (1 to 1 relationship with dotfiles list)
     sysfiles = getSysfiles(dotfiles)
-    return []
+    # return diff results
+    return diff(sysfiles, dotfiles)
 
 # main
 def main():
-    return diffResults()
+    # get diff results
+    diffResults = getDiffResults()
+    print(diffResults)
+    print(list(diffResults))
+    for d in diffResults:
+        print(d)
+    sys.exit(0)
 
 # check for main and run script
 if __name__ == '__main__':
