@@ -4,7 +4,23 @@
 # license: what's a license?
 #
 # diff system files and dotfiles and display any discrepancies
+#
+# TODO
+#     only diff textfiles, check other files for just missing
+#     create legend
+#         i.e. m == missing, d == different, w/e
+#
 import os, sys, difflib
+
+# tcolor
+class tcolor:
+    PURPLE  = '\033[95m'
+    BLUE    = '\033[94m'
+    GREEN   = '\033[92m'
+    YELLOW  = '\033[93m'
+    RED     = '\033[91m'
+    ENDC    = '\033[0m'
+    CTXT    = lambda c, m: '{}{}{}'.format(c, m, tcolor.ENDC)
 
 # TODO args
 currOS = 'os/gentoo'
@@ -86,7 +102,6 @@ def diff(sysfiles, dotfiles):
     results = {}
     # iterate files
     for i in range(len(sysfiles)):
-        print('{}:{}'.format(sysfiles[i], dotfiles[i]))
         try:
             # TODO check file r ok
             # open files for reading
@@ -117,7 +132,14 @@ def getDiffResults():
 
 # printDiffResults
 def printDiffResults(diffResults):
-    print(diffResults)
+    # iterate diff results
+    for k,v in diffResults.items():
+        # check for not empty diff
+        if not len(list(v[2])) == 0:
+            c1 = tcolor.RED
+            c2 = tcolor.YELLOW
+            print('{}'.format(tcolor.CTXT(c1, k)))
+            print('\t{}\n\t{}'.format(tcolor.CTXT(c2, v[0].name), tcolor.CTXT(c2, v[1].name)))
 
 # main
 def main():
