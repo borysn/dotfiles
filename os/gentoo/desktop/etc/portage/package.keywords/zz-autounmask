@@ -1,0 +1,246 @@
+# package.keywords# required by app-editors/neovim-0.2.0::gentoo
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-lua/lpeg-1.0.1 ~amd64
+# required by neovim-python-client (argument)
+=dev-python/neovim-python-client-0.1.13 ~amd64
+# required by app-editors/neovim-0.2.0::gentoo[tui]
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-libs/libtermkey-0.19 ~amd64
+# required by app-editors/neovim-0.2.0::gentoo
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-libs/msgpack-1.1.0 ~amd64
+# required by dev-ruby/net-telnet-0.1.1-r1::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.4.1-r1::gentoo
+# required by dev-ruby/rubygems-2.6.12::gentoo[ruby_targets_ruby24]
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby21]
+# required by dev-ruby/xmlrpc-0.3.0::gentoo[ruby_targets_ruby24,-test]
+=dev-lang/ruby-2.3.4-r1 ~amd64
+# required by app-editors/neovim-0.2.0::gentoo[ruby]
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-ruby/neovim-ruby-client-0.4.0 ~amd64
+# required by dev-ruby/power_assert-1.0.1-r1::gentoo[ruby_targets_ruby23,-test]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.3.4-r1::gentoo
+# required by dev-ruby/rubygems-2.6.12::gentoo[ruby_targets_ruby23]
+=virtual/rubygems-13 ~amd64
+# required by dev-lang/ruby-2.4.1-r1::gentoo
+# required by dev-ruby/rubygems-2.6.12::gentoo[ruby_targets_ruby24]
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby21]
+# required by dev-ruby/net-telnet-0.1.1-r1::gentoo
+# required by dev-lang/ruby-2.3.4-r1::gentoo
+# required by dev-ruby/msgpack-1.1.0::gentoo[ruby_targets_ruby23]
+# required by dev-ruby/neovim-ruby-client-0.4.0::gentoo[ruby_targets_ruby22]
+# required by app-editors/neovim-0.2.0::gentoo[ruby]
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-ruby/power_assert-1.0.1-r1 ~amd64
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.3.4-r1::gentoo[rdoc]
+# required by dev-ruby/rubygems-2.6.12::gentoo[ruby_targets_ruby23]
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.4.1-r1::gentoo
+# required by dev-ruby/net-telnet-0.1.1-r1::gentoo[ruby_targets_ruby24]
+=dev-ruby/racc-1.4.14 ~amd64
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.3.4-r1::gentoo[rdoc]
+# required by dev-ruby/rubygems-2.6.12::gentoo[ruby_targets_ruby23]
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.4.1-r1::gentoo
+# required by dev-ruby/net-telnet-0.1.1-r1::gentoo[ruby_targets_ruby24]
+=dev-ruby/kpeg-1.1.0 ~amd64
+# required by dev-lang/ruby-2.4.1-r1::gentoo[rdoc]
+# required by dev-ruby/rubygems-2.6.12::gentoo[ruby_targets_ruby24]
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby21]
+# required by dev-ruby/net-telnet-0.1.1-r1::gentoo
+# required by dev-lang/ruby-2.3.4-r1::gentoo
+# required by dev-ruby/power_assert-1.0.1-r1::gentoo[ruby_targets_ruby23]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.2.6::gentoo
+# required by dev-ruby/msgpack-1.1.0::gentoo[ruby_targets_ruby22]
+# required by dev-ruby/neovim-ruby-client-0.4.0::gentoo[ruby_targets_ruby22]
+# required by app-editors/neovim-0.2.0::gentoo[ruby]
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-ruby/rdoc-5.1.0 ~amd64
+# required by dev-lang/ruby-2.4.1-r1::gentoo
+# required by dev-ruby/rubygems-2.6.12::gentoo[ruby_targets_ruby24]
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby21]
+# required by dev-ruby/net-telnet-0.1.1-r1::gentoo
+# required by dev-lang/ruby-2.3.4-r1::gentoo
+# required by dev-ruby/power_assert-1.0.1-r1::gentoo[ruby_targets_ruby23]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.2.6::gentoo
+# required by dev-ruby/msgpack-1.1.0::gentoo[ruby_targets_ruby22]
+# required by dev-ruby/neovim-ruby-client-0.4.0::gentoo[ruby_targets_ruby22]
+# required by app-editors/neovim-0.2.0::gentoo[ruby]
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-ruby/minitest-5.10.1 ~amd64
+# required by dev-lang/ruby-2.3.4-r1::gentoo
+# required by dev-ruby/rubygems-2.6.12::gentoo[ruby_targets_ruby23]
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.4.1-r1::gentoo
+# required by dev-ruby/net-telnet-0.1.1-r1::gentoo[ruby_targets_ruby24]
+=dev-ruby/did_you_mean-1.0.2 ~amd64
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=app-editors/neovim-0.2.0 ~amd64
+# required by dev-lang/ruby-2.4.1-r1::gentoo
+# required by dev-ruby/rubygems-2.6.12::gentoo[ruby_targets_ruby24]
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby21]
+# required by dev-ruby/xmlrpc-0.3.0::gentoo[ruby_targets_ruby24,-test]
+=dev-ruby/net-telnet-0.1.1-r1 ~amd64
+# required by dev-ruby/rdoc-5.1.0::gentoo[ruby_targets_ruby22]
+# required by dev-lang/ruby-2.3.4-r1::gentoo[rdoc]
+# required by dev-ruby/rubygems-2.6.12::gentoo[ruby_targets_ruby23]
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.4.1-r1::gentoo
+# required by dev-ruby/net-telnet-0.1.1-r1::gentoo[ruby_targets_ruby24]
+=dev-ruby/json-2.1.0 ~amd64
+# required by dev-lang/ruby-2.4.1-r1::gentoo
+# required by dev-ruby/rubygems-2.6.12::gentoo[ruby_targets_ruby24]
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby21]
+# required by dev-ruby/net-telnet-0.1.1-r1::gentoo
+# required by dev-lang/ruby-2.3.4-r1::gentoo
+# required by dev-ruby/power_assert-1.0.1-r1::gentoo[ruby_targets_ruby23]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.2.6::gentoo
+# required by dev-ruby/msgpack-1.1.0::gentoo[ruby_targets_ruby22]
+# required by dev-ruby/neovim-ruby-client-0.4.0::gentoo[ruby_targets_ruby22]
+# required by app-editors/neovim-0.2.0::gentoo[ruby]
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-ruby/rake-12.0.0 ~amd64
+# required by app-editors/neovim-0.2.0::gentoo
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-lua/mpack-1.0.4 ~amd64
+# required by dev-lang/ruby-2.4.1-r1::gentoo
+# required by dev-ruby/rubygems-2.6.12::gentoo[ruby_targets_ruby24]
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby21]
+# required by dev-ruby/net-telnet-0.1.1-r1::gentoo
+# required by dev-lang/ruby-2.3.4-r1::gentoo
+# required by dev-ruby/power_assert-1.0.1-r1::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.2.6::gentoo
+# required by dev-ruby/msgpack-1.1.0::gentoo[ruby_targets_ruby22]
+# required by dev-ruby/neovim-ruby-client-0.4.0::gentoo[ruby_targets_ruby22]
+# required by app-editors/neovim-0.2.0::gentoo[ruby]
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-ruby/test-unit-3.2.3-r1 ~amd64
+# required by app-editors/neovim-0.2.0::gentoo
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-libs/libvterm-0.0_pre20160305 ~amd64
+# required by app-editors/neovim-0.2.0::gentoo[tui]
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-libs/unibilium-1.1.4 ~amd64
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby24]
+# required by dev-lang/ruby-2.3.4-r1::gentoo
+# required by dev-ruby/rubygems-2.6.12::gentoo[ruby_targets_ruby23]
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby21]
+# required by dev-ruby/net-telnet-0.1.1-r1::gentoo
+=dev-lang/ruby-2.4.1-r1 ~amd64
+# required by dev-ruby/neovim-ruby-client-0.4.0::gentoo[ruby_targets_ruby22]
+# required by app-editors/neovim-0.2.0::gentoo[ruby]
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-ruby/msgpack-1.1.0 ~amd64
+# required by dev-lang/ruby-2.4.1-r1::gentoo
+# required by dev-ruby/rubygems-2.6.12::gentoo[ruby_targets_ruby24]
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby21]
+# required by dev-ruby/net-telnet-0.1.1-r1::gentoo
+# required by dev-lang/ruby-2.3.4-r1::gentoo
+# required by dev-ruby/power_assert-1.0.1-r1::gentoo[ruby_targets_ruby23]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.2.6::gentoo
+# required by dev-ruby/msgpack-1.1.0::gentoo[ruby_targets_ruby22]
+# required by dev-ruby/neovim-ruby-client-0.4.0::gentoo[ruby_targets_ruby22]
+# required by app-editors/neovim-0.2.0::gentoo[ruby]
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-ruby/did_you_mean-1.1.2 ~amd64
+# required by dev-lang/ruby-2.4.1-r1::gentoo
+# required by dev-ruby/rubygems-2.6.12::gentoo[ruby_targets_ruby24]
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby21]
+# required by dev-ruby/net-telnet-0.1.1-r1::gentoo
+# required by dev-lang/ruby-2.3.4-r1::gentoo
+# required by dev-ruby/power_assert-1.0.1-r1::gentoo[ruby_targets_ruby23]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.2.6::gentoo
+# required by dev-ruby/msgpack-1.1.0::gentoo[ruby_targets_ruby22]
+# required by dev-ruby/neovim-ruby-client-0.4.0::gentoo[ruby_targets_ruby22]
+# required by app-editors/neovim-0.2.0::gentoo[ruby]
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-ruby/xmlrpc-0.3.0 ~amd64
+# required by virtual/rubygems-13::gentoo[ruby_targets_ruby21]
+# required by dev-lang/ruby-2.4.1-r1::gentoo
+# required by dev-ruby/net-telnet-0.1.1-r1::gentoo[ruby_targets_ruby24]
+# required by dev-lang/ruby-2.3.4-r1::gentoo
+# required by dev-ruby/power_assert-1.0.1-r1::gentoo[ruby_targets_ruby23]
+# required by dev-ruby/test-unit-3.2.3-r1::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.2.6::gentoo
+# required by dev-ruby/msgpack-1.1.0::gentoo[ruby_targets_ruby22]
+# required by dev-ruby/neovim-ruby-client-0.4.0::gentoo[ruby_targets_ruby22]
+# required by app-editors/neovim-0.2.0::gentoo[ruby]
+# required by dev-python/neovim-python-client-0.1.13::gentoo
+# required by neovim-python-client (argument)
+=dev-ruby/rubygems-2.6.12 ~amd64
+# required by android-util (argument)
+=dev-java/android-util-4.1.1.4 ~amd64
+# required by bluez-alsa (argument)
+=media-sound/bluez-alsa-1.2.0 ~amd64
+# required by =firefox-52.1.0-r1 (argument)
+=www-client/firefox-52.1.0-r1 ~amd64
+# required by =nvidia-drivers-381.09 (argument)
+=x11-drivers/nvidia-drivers-381.09 ~amd64
+# required by polybar (argument)
+=x11-misc/polybar-9999 **
+# required by games-util/steam-meta-0-r20160817::steam-overlay
+# required by steam-meta (argument)
+=games-util/steam-client-meta-0-r20160828 ~amd64
+# required by chromium-bin (argument)
+=www-client/chromium-bin-53.0.2785.143.1145 **
+# required by media-fonts/siji (argument)
+=media-fonts/siji-1.0-r2 ~amd64
+# required by i3lock-color (argument)
+=x11-misc/i3lock-color-9999 ~amd64
+# required by =neofetch-3.0.1 (argument)
+=app-misc/neofetch-3.0.1 ~amd64
+# required by www-client/chromium-bin-53.0.2785.143.1145::hossie
+# required by chromium-bin (argument)
+=dev-libs/libgcrypt-1.5.6-r101 ~amd64
+# required by games-util/steam-meta-0-r20160817::steam-overlay[steamruntime]
+# required by steam-meta (argument)
+=games-util/steam-games-meta-0-r20160812 ~amd64
+# required by i3lock-fancy (argument)
+=x11-misc/i3lock-fancy-9999 ~amd64
+# required by i3-gaps (argument)
+=x11-wm/i3-gaps-4.13 ~amd64
+# required by media-fonts/ttf-font-icons (argument)
+=media-fonts/ttf-font-icons-9999 ~amd64
+# required by google-chrome (argument)
+=www-client/google-chrome-58.0.3029.96 ~amd64
+# required by games-util/steam-meta-0-r20160817::steam-overlay
+# required by steam-meta (argument)
+=games-util/steam-launcher-1.0.0.54-r1 ~amd64
+# required by atom-bin (argument)
+=app-editors/atom-bin-1.2.0 ~amd64
+# required by steam-meta (argument)
+=games-util/steam-meta-0-r20160817 ~amd64
+# required by tty-clock (argument)
+=app-misc/tty-clock-2.3 ~amd64
+# required by cava (argument)
+=media-sound/cava-0.4.2 ~amd64
+# required by discord (argument)
+=net-im/discord-0.0.1 ~amd64
+# required by x11-themes/notify-osd-icons (argument)
+=x11-themes/notify-osd-icons-0.7 ~amd64
+# required by x11-misc/notify-osd (argument)
+=x11-misc/notify-osd-0.9.34 ~amd64

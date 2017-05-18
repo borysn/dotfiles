@@ -21,6 +21,7 @@ ignoreList = [
     'extra',
     '__pycache__',
     'os/arch',
+    'sudoers',
     laptop if not laptopDiff else desktop
 ]
 
