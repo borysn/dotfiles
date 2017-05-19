@@ -76,7 +76,7 @@ def filterIgnored(root, filenames):
             # check if file is ignored
             if not isIgnoredFileOrDir(file):
                 # add file
-                files.append(fcwd('{}/{}'.format(root[2:], file)))
+                files.append(fcwd(os.path.join(root[2:], file)))
     return files
 
 # getAllFiles
@@ -102,7 +102,7 @@ def getSysfiles(dotfiles):
             sysfiles.append(file)
         else:
             # user space file
-            file = '{}{}'.format(os.environ['HOME'], f[len(os.getcwd())+1:])
+            file = os.path.join(os.environ['HOME'], f[len(os.getcwd())+1:])
             sysfiles.append(file)
 
     # return result
@@ -137,8 +137,10 @@ def getDiffObjects():
 def printDiffResults(diffObjects):
     # iterate diff results
     for file, obj in diffObjects.items():
+        # get diff
+        diff = obj.diff()
         # check for not empty diff
-        if not obj.diff():
+        if not diff == '':
             c1 = tcolor.RED
             c2 = tcolor.YELLOW
             print('{}'.format(tcolor.CTXT(c1, file)))
