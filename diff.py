@@ -5,13 +5,7 @@
 #
 # diff system files and dotfiles and display any discrepancies
 #
-# TODO
-#     1. only diff textfiles, check other files for just missing
-#     2. create legend
-#            i.e. m == missing, d == different, w/e
-#     3. some diffs on sh files or conf files end up not empty, how come?
-#             should i move to calling diff from shell, and storing results?
-import os, sys, difflib
+import os, sys, difflib, subprocess
 
 # tcolor
 class tcolor:
@@ -22,6 +16,23 @@ class tcolor:
     RED     = '\033[91m'
     ENDC    = '\033[0m'
     CTXT    = lambda c, m: '{}{}{}'.format(c, m, tcolor.ENDC)
+
+# diffobj
+class DiffObj:
+    # constructor
+    def __init__(self, dotfile, sysfile):
+        self.dotfile = dotfile
+        self.sysfile = sysfile
+    # sysfileExists
+    def sysfileExists(self): return os.path.exists(self.sysfile)
+    # getFileBasename
+    def getFileBasename(self): return os.path.basename(self.sysfile)
+    # diff files
+    def diff(self): return subprocess.getoutput('diff {} {}'.format(self.sysfile, self.dotfile))
+    # getSysfile
+    def getSysfile(self): return self.sysfile
+    # getDotfile
+    def getDotfile(self): return self.dotfile
 
 # TODO args
 currOS = 'os/gentoo'
@@ -97,24 +108,15 @@ def getSysfiles(dotfiles):
     # return result
     return sysfiles
 
-# diff
-def diff(sysfiles, dotfiles):
+# prepareDiffObjects
+def prepareDiffObjects(sysfiles, dotfiles):
     # init diff
     results = {}
     # iterate files
     for i in range(len(sysfiles)):
         try:
-            # TODO check file r ok
-            # open files for reading
-            f1 = open(sysfiles[i], 'r', errors='replace')
-            f2 = open(dotfiles[i], 'r', errors='replace')
-            # diff files
-            diff = difflib.ndiff(f1.readlines(), f2.readlines())
-            # store results
-            results[os.path.basename(f1.name)] = [f1, f2, diff]
-            # close files
-            f1.close()
-            f2.close()
+            # create adn store diff obj
+            results[os.path.basename(sysfiles[i])] = DiffObj(sysfiles[i], dotfiles[i])
         except Exception as err:
             print(err)
             sys.exit(2)
@@ -122,30 +124,31 @@ def diff(sysfiles, dotfiles):
     # return diff
     return results
 
-# getDiffResults
-def getDiffResults():
+# getDiffObjects
+def getDiffObjects():
     # get dotfiles (repo)
     dotfiles = getDotfiles()
     # get files on system (1 to 1 relationship with dotfiles list)
     sysfiles = getSysfiles(dotfiles)
     # return diff results
-    return diff(sysfiles, dotfiles)
+    return prepareDiffObjects(sysfiles, dotfiles)
 
 # printDiffResults
-def printDiffResults(diffResults):
+def printDiffResults(diffObjects):
     # iterate diff results
-    for k,v in diffResults.items():
+    for file, obj in diffObjects.items():
         # check for not empty diff
-        if not len(list(v[2])) == 0:
+        if not obj.diff():
             c1 = tcolor.RED
             c2 = tcolor.YELLOW
-            print('{}'.format(tcolor.CTXT(c1, k)))
-            print('\t{}\n\t{}'.format(tcolor.CTXT(c2, v[0].name), tcolor.CTXT(c2, v[1].name)))
+            print('{}'.format(tcolor.CTXT(c1, file)))
+            print('\t{}'.format(tcolor.CTXT(c2, obj.getSysfile())))
+            print('\t{}'.format(tcolor.CTXT(c2, obj.getDotfile())))
 
 # main
 def main():
     # get diff results
-    printDiffResults(getDiffResults())
+    printDiffResults(getDiffObjects())
     # script completed successfully
     sys.exit(0)
 
