@@ -5,7 +5,7 @@
 #
 # diff system files and dotfiles and display any discrepancies
 #
-import os, sys, difflib, subprocess
+import os, sys, subprocess
 
 # tcolor
 class tcolor:
