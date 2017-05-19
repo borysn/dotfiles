@@ -1,11 +1,12 @@
 #!/usr/bin/env python
+#
 # diff.py
 # author: borysn
 # license: what's a license?
 #
 # diff system files and dotfiles and display any discrepancies
 #
-import os, sys, subprocess
+import os, sys, subprocess, argparse
 
 # tcolor
 class tcolor:
@@ -34,71 +35,74 @@ class DiffObj:
     # getDotfile
     def getDotfile(self): return self.dotfile
 
-# TODO args
-currOS = 'os/gentoo'
-laptop = '{}/{}'.format(currOS, 'laptop')
-desktop = '{}/{}'.format(currOS, 'desktop')
-laptopDiff = False
-fcwd = lambda x: '{}/{}'.format(os.getcwd(), x)
-target = desktop if not laptopDiff else laptop
-ignoreList = [
-    '.git',
-    '.gitattributes',
-    'README.md',
-    'diff.py',
-    'extra',
-    '__pycache__',
-    'os/arch',
-    'sudoers',
-    laptop if not laptopDiff else desktop
-]
+# properties
+class properties:
+    currOS = 'os/gentoo'
+    laptop = '{}/{}'.format(currOS, 'laptop')
+    desktop = '{}/{}'.format(currOS, 'desktop')
+    target = ''
+    ignoreList = []
+    # constructor
+    def __init__(self, args):
+        self.target = self.laptop if args.laptop else self.desktop
+        self.ignoreList.extend([
+            '.git',
+            '.gitattributes',
+            'README.md',
+            'diff.py',
+            'extra',
+            '__pycache__',
+            'os/arch',
+            'sudoers',
+            self.desktop if args.laptop else self.laptop
+        ])
 
 # isIgnoredFileOrDir
-def isIgnoredFileOrDir(i):
+def isIgnoredFileOrDir(props, string):
     # init return
     result = False
     # traverse ignore list
-    for ignore in ignoreList:
-        if ignore in i:
+    for ignore in props.ignoreList:
+        if ignore in string:
             result = True
             break
     # not ignored
     return result
 
 # filterIgnored
-def filterIgnored(root, filenames):
+def filterIgnored(props, root, filenames):
     # init return
     files = []
     # check if root is ignored
-    if not isIgnoredFileOrDir(root):
+    if not isIgnoredFileOrDir(props, root):
         # traverse filenames
         for file in filenames:
             # check if file is ignored
-            if not isIgnoredFileOrDir(file):
+            if not isIgnoredFileOrDir(props, file):
                 # add file
-                files.append(fcwd(os.path.join(root[2:], file)))
+                files.append(os.path.join(os.getcwd(), root[2:], file))
     return files
 
 # getAllFiles
-def getDotfiles():
+def getDotfiles(props):
     # init return
     files = []
     # recursively walk dotfiles dir
     for root, dirnames, filenames in os.walk('.'):
-        files.extend(filterIgnored(root, filenames))
+        files.extend(filterIgnored(props, root, filenames))
     # return results
     return files
 
 # getSysfiles
-def getSysfiles(dotfiles):
+def getSysfiles(props, dotfiles):
     # init return
     sysfiles = []
     # traverse dotfiles
     for f in dotfiles:
         # check for file outside of user space
-        if target in f:
+        if props.target in f:
             # truncate everything (upto and including) the target string
-            file = f[len(os.getcwd()) + len(target) + 1:]
+            file = f[len(os.getcwd()) + len(props.target) + 1:]
             sysfiles.append(file)
         else:
             # user space file
@@ -125,11 +129,11 @@ def prepareDiffObjects(sysfiles, dotfiles):
     return results
 
 # getDiffObjects
-def getDiffObjects():
+def getDiffObjects(props):
     # get dotfiles (repo)
-    dotfiles = getDotfiles()
+    dotfiles = getDotfiles(props)
     # get files on system (1 to 1 relationship with dotfiles list)
-    sysfiles = getSysfiles(dotfiles)
+    sysfiles = getSysfiles(props, dotfiles)
     # return diff results
     return prepareDiffObjects(sysfiles, dotfiles)
 
@@ -147,10 +151,22 @@ def printDiffResults(diffObjects):
             print('\t{}'.format(tcolor.CTXT(c2, obj.getSysfile())))
             print('\t{}'.format(tcolor.CTXT(c2, obj.getDotfile())))
 
+# parseArgs
+def parseArgs():
+    # get argument parser
+    parser = argparse.ArgumentParser()
+    # laptop flag
+    parser.add_argument('-l', '--laptop', action='store_true', help='flag to target laptop os files')
+    # verbose output TODO
+    parser.add_argument('-v', '--verbose', action='store_true', help='verbose output')
+    return parser.parse_args()
+
 # main
 def main():
+    # parse args
+    args = parseArgs()
     # get diff results
-    printDiffResults(getDiffObjects())
+    printDiffResults(getDiffObjects(properties(args)))
     # script completed successfully
     sys.exit(0)
 
