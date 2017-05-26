@@ -24,9 +24,13 @@
 #       the blkid(8) command.
 
 # boot
-/dev/sda1     /boot        vfat   defaults                                  1 2
+/dev/sda1     /boot        vfat   defaults                                  0 0
 # root
-/dev/sda3     /            ext4   rw,relatime,noatime,data=ordered          0 1
+/dev/sda3     /            ext4   rw,relatime,noatime,data=ordered          0 0
+# swap
+/dev/sda2     swap         swap   defaults                                  0 0
+# tmpfs
+shm           /dev/shm     tmpfs  nodev,nosuid,noexec                       0 0
 # cdrom
 /dev/cdrom    /mnt/cdrom   auto   noauto,ro                                 0 0
 # restrict access to pid dirs
