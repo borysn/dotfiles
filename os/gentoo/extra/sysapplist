@@ -92,3 +92,4 @@ dev-python/virtualenv
 gdb
 strace
 speedtest-cli
+youtube-dl
