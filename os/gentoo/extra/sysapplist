@@ -93,3 +93,4 @@ gdb
 strace
 speedtest-cli
 youtube-dl
+ipython
