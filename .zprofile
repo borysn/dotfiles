@@ -1,10 +1,16 @@
+#!/bin/sh
+
+#
 # .zprofile
 # author: borysn
 # license: what's a license?
+#
 
-##########
-# sdkman #
-##########
+###########
+# exports #
+###########
+
+export PYTHONSTARTUP=~/.pythonrc
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/p3pt/.sdkman"
