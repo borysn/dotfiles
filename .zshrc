@@ -29,7 +29,7 @@ export PATH=$PATH:~/.local/scripts
 export PATH=$PATH:~/.npm/bin
 export PATH=$PATH:~/.gem/ruby/2.4.0/bin
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-source $HOME/.local/python/user/bin/activate
+#source $HOME/.local/python/user/bin/activate
 
 ################
 # load plugins #
